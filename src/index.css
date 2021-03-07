@@ -1,0 +1,53 @@
+:root {
+    /* CSS HEX */
+    --onyx: #3e4444ff;
+    --dark-grey_black: rgb(37, 41, 41);
+    --dark-grey_black-hover: rgb(48, 53, 53);
+    --dim-gray: #616b6bff;
+    --bud-green: #82b74bff;
+    --dark-moss-green: #405d27ff;
+    --army-green: #32481eff;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--onyx);
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: var(--dark-grey_black);
+    border-bottom: 3px solid var(--dark-moss-green);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.projects-link__container {
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.no-style {
+    color: inherit;
+    font-style: none;
+    text-decoration: none;
+}
+
+.home-link {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+.projects-link__container:hover {
+    background-color: var(--dark-grey_black-hover);
+}
