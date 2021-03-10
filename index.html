@@ -7,13 +7,57 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="" />
     <link rel="stylesheet" href="src/index.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
     <title>Tormak.dev</title>
   </head>
   <body ontouchstart>
-    <div class="header">
-      <div class="projects-link__container">
-        <a href="./" class="no-style home-link">Home</a>
+    <div class="header-container">
+      <div class="header">
+        <div class="projects-link__container">
+          <a href="./" class="no-style home-link">Home</a>
+        </div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
       </div>
     </div>
+    <div class="icon-bar">
+      <a href="https://github.com/Tormak9970" target="_blank" rel="noopener noreferrer" class="social-btn .github"><i class="fa fa-github-square"></i></a>
+    </div>
+    <div class="main-container">
+      <div class="spacer-container">
+        <!--  maybe project preview slideshow here? -->
+      </div>
+      <div class="main-container__body">
+        <div class="sidebar-container">
+          <h1 class="project-header">Projects</h1>
+          <div class="project-btns-container">
+            <a href="./#" class="project-btn">SWTOR</a>
+            <a href="./#" class="project-btn">RLBot</a>
+            <a href="./#" class="project-btn">Discord</a>
+            <a href="./#" class="project-btn">SpringBoot</a>
+            <a href="./#" class="project-btn">Web Games</a>
+          </div>
+        </div>
+        <div class="main-container__body__main">
+          <div class="page-content">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      //scroll bar in header update
+      window.onscroll = function() {myFunction()};
+
+      function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+      }
+    </script>
   </body>
 </html>
