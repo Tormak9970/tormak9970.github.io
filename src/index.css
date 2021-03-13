@@ -32,6 +32,7 @@ html, body {
     background-color: var(--onyx);
     scroll-behavior: smooth;
     font-family: 'Rubik', sans-serif;
+    color: white;
 }
 
 .header-container {
@@ -79,18 +80,18 @@ html, body {
     background-color: var(--army-green);
 }
 .progress-bar {
-    height: 8px;
+    height: 3px;
     background: var(--bud-green);
     width: 0%;
 }
 
 .icon-bar {
     position: fixed;
-    top: 50%;
+    top: 98px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    right: 0;
+    left: 3px;
 }
 .social-btn {
     display: block;
@@ -146,28 +147,162 @@ html, body {
     justify-content: flex-start;
 }
 .main-container__body {
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: var(--dark-onyx);
+    max-height: 539.48px;
 }
 .spacer-container {
-    height: 573px;
+    height: 325px;
     width: 100%;
+    background-color: var(--onyx);
 }
 .main-container__body__main {
+    overflow-y: auto;
     width: calc(100% - 160px);
     margin-left: 160px;
-    height: 519.48px;
-    overflow: hidden;
+    max-height: 539.48px;
 }
+
 .page-content {
     width: 100%;
-    height: 100%;
-    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: auto;
+}
+.content-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 19px 0px;
+    width: 400px;
+    height: 500px;
+    background-color: var(--army-green);
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content-container-skill {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 19px 0px;
+    width: 600px;
+    height: 500px;
+    background-color: var(--army-green);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content-container__header {
+    margin: 10px 0px;
+    font-weight: normal;
+}
+.content-container__about-body {
+    padding: 14px;
+    font-size: 18px;
+    line-height: 26px;
+}
+.content-container__subskill {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content-container__subskill-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-container__subskill-container__content {
+    margin: 0px 15px;
+    width: calc(100% - 30px);
+}
+.skill-header {
+    padding: 0;
+    margin: 0;
+}
+.skill-container {
+    margin: 6px 0px;
+    padding: 0;
+    width: calc(100% - 30px);
+    height: 20px;
+    background-color: var(--dark-grey_black);
+    position: relative;
+    display: inline-block;
+}
+.skill-bar {
+    height: inherit;
+    text-align: right;
+}
+
+.js {width: 98%; background-color: rgb(255, 255, 0);}
+.java {width: 88%; background-color: rgb(255, 145, 0);}
+.py {width: 30%; background-color: rgb(255, 255, 0);}
+.html {width: 100%; background-color: rgb(255, 38, 0);}
+.css {width: 94%; background-color: rgb(0, 162, 255);}
+.php {width: 35%; background-color: rgb(153, 0, 255);}
+.cpp {width: 25%; background-color: rgb(0, 255, 34);}
+
+.sb {width: 40%; background-color: rgb(9, 167, 9);}
+.jfx {width: 68%; background-color: rgb(255, 145, 0);}
+.react {width: 10%; background-color: rgb(255, 255, 0);}
+.three {width: 87%; background-color: rgb(255, 255, 0);}
+.jda {width: 92%; background-color: rgb(255, 145, 0);}
+.da {width: 52%; background-color: rgb(107, 55, 167);}
+
+.skill-container .skill-tooltip {
+    visibility: hidden;
+    width: 100px;
+    background-color: var(--bud-green);
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 83%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.skill-container .skill-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--bud-green) transparent transparent transparent;
+}
+.skill-container:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.featured-project-card__container {
+    width: 100%;
+    height: 442px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.featured-project-card {
+    background-color: var(--dark-grey_black);
+    width: calc(100% - 80px);
+    height: calc(100% - 40px);
+    margin: 15px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
