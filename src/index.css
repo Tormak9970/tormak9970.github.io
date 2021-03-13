@@ -136,6 +136,9 @@ html, body {
 .project-btn:hover {
     padding-left: 25px;
 }
+.project-btn__displaying {
+    padding-left: 25px;
+}
 
 .main-container {
     width: 100%;
@@ -305,4 +308,26 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.content-category-slide-in {
+    background-color: var(--dark-grey_black);
+    height: calc(100% - 73px);
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    border-left: 2px solid var(--bud-green);
+    transition: width 0.3s;
+}
+.content-category-slide-in__span{
+    background-color: var(--bud-green);
+    left: -40px;
+    top: 40px;
+    padding: 20px 15px;
+    position: relative;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.project__overlay {
+    
 }

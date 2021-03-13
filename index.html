@@ -35,12 +35,12 @@
         <div class="sidebar-container">
           <h1 class="project-header">Projects</h1>
           <div class="project-btns-container">
-            <a href="./#" class="project-btn">SWTOR</a>
-            <a href="./#" class="project-btn">RLBot</a>
-            <a href="./#" class="project-btn">Discord</a>
-            <a href="./#" class="project-btn">SpringBoot</a>
-            <a href="./#" class="project-btn">Games</a>
-            <a href="./#" class="project-btn">Other</a>
+            <a id="swtor" class="project-btn">SWTOR</a>
+            <a id="rlbot" class="project-btn">RLBot</a>
+            <a id="discord" class="project-btn">Discord</a>
+            <a id="sb" class="project-btn">SpringBoot</a>
+            <a id="games" class="project-btn">Games</a>
+            <a id="other" class="project-btn">Other</a>
           </div>
         </div>
         <div class="main-container__body__main">
@@ -186,16 +186,77 @@
           </div>
         </div>
       </div>
+
+      <!-- will have the slide in containers here -->
+      <div id="projectOverlay" class="content-category-slide-in">
+        <span class="content-category-slide-in__span">&#xab;</span> <!--&#xbb; for >>-->
+        <div id="swtorOverlay" class="project__overlay" style="display: none;">
+
+        </div>
+
+        <div id="rlbotOverlay" class="project__overlay" style="display: none;">
+
+        </div>
+
+        <div id="discordOverlay" class="project__overlay" style="display: none;">
+
+        </div>
+        
+        <div id="sbOverlay" class="project__overlay" style="display: none;">
+
+        </div>
+        
+        <div id="gamesOverlay" class="project__overlay" style="display: none;">
+
+        </div>
+        
+        <div id="otherOverlay" class="project__overlay" style="display: none;">
+
+        </div>
+      </div>
     </div>
     <script type="text/javascript">
-      //scroll bar in header update
-      window.onscroll = function() {myFunction()};
+      let swtorBtn = document.getElementById("swtor");
+      let rlbotBtn = document.getElementById("rlbot");
+      let discordBtn = document.getElementById("discord");
+      let springBtn = document.getElementById("sb");
+      let gamesBtn = document.getElementById("games");
+      let otherBtn = document.getElementById("other");
+      
+      let swtorOverlay = document.getElementById("swtorOverlay");
+      let rlbotOverlay = document.getElementById("rlbotOverlay");
+      let discordOverlay = document.getElementById("discordOverlay");
+      let springOverlay = document.getElementById("sbOverlay");
+      let gamesOverlay = document.getElementById("gamesOverlay");
+      let otherOverlay = document.getElementById("otherOverlay");
 
-      function myFunction() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = scrolled + "%";
+      let projectOverlay = document.getElementById("projectOverlay");
+
+      let projectBtnList = [swtorBtn, rlbotBtn, discordBtn, springBtn, gamesBtn, otherBtn];
+      let projectOverlayList = [swtorOverlay, rlbotOverlay, discordOverlay, springOverlay, gamesOverlay, otherOverlay];
+
+
+      for (let i = 0; i < projectBtnList.length; i++) {
+        let pb = projectBtnList[i];
+        let po = projectOverlayList[i];
+
+        pb.addEventListener("click", () => {
+          resetElems();
+          pb.classList.add("project-btn__displaying");
+          if (projectOverlay.style.width != "calc(100% - 162px)") {
+            projectOverlay.style.width = "calc(100% - 162px)";
+          }
+          po.style.display = "flex";
+        });
+      }
+
+      function resetElems() {
+        projectOverlayList.forEach((po) => {
+          po.style.display = "none";
+        });
+        projectBtnList.forEach((pb) => {
+          pb.classList.remove("project-btn__displaying");
+        })
       }
     </script>
   </body>
