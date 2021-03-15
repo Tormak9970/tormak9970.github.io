@@ -135,6 +135,7 @@ html, body {
 }
 .project-btn:hover {
     padding-left: 25px;
+    cursor: pointer;
 }
 .project-btn__displaying {
     padding-left: 25px;
@@ -162,6 +163,13 @@ html, body {
     height: 325px;
     width: 100%;
     background-color: var(--onyx);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.lang-img {
+    width: 100px;
 }
 .main-container__body__main {
     overflow-y: auto;
@@ -245,20 +253,20 @@ html, body {
     text-align: right;
 }
 
-.js {width: 98%; background-color: rgb(255, 255, 0);}
-.java {width: 88%; background-color: rgb(255, 145, 0);}
-.py {width: 30%; background-color: rgb(255, 255, 0);}
-.html {width: 100%; background-color: rgb(255, 38, 0);}
-.css {width: 94%; background-color: rgb(0, 162, 255);}
-.php {width: 35%; background-color: rgb(153, 0, 255);}
-.cpp {width: 25%; background-color: rgb(0, 255, 34);}
+.js {width: 98%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
+.java {width: 88%; background-color: var(--bud-green);/*rgb(255, 145, 0);*/}
+.py {width: 30%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
+.html {width: 100%; background-color: var(--bud-green);/*rgb(255, 38, 0);*/}
+.css {width: 94%; background-color: var(--bud-green);/*rgb(0, 162, 255);*/}
+.php {width: 35%; background-color: var(--bud-green);/*rgb(153, 0, 255);*/}
+.cpp {width: 25%; background-color: var(--bud-green);/*rgb(0, 255, 34);*/}
 
-.sb {width: 40%; background-color: rgb(9, 167, 9);}
-.jfx {width: 68%; background-color: rgb(255, 145, 0);}
-.react {width: 10%; background-color: rgb(255, 255, 0);}
-.three {width: 87%; background-color: rgb(255, 255, 0);}
-.jda {width: 92%; background-color: rgb(255, 145, 0);}
-.da {width: 52%; background-color: rgb(107, 55, 167);}
+.sb {width: 40%; background-color: var(--bud-green);/*rgb(9, 167, 9);*/}
+.jfx {width: 68%; background-color: var(--bud-green);/*rgb(255, 145, 0);*/}
+.react {width: 10%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
+.three {width: 87%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
+.jda {width: 92%; background-color: var(--bud-green);/*rgb(255, 145, 0);*/}
+.da {width: 52%; background-color: var(--bud-green);/*rgb(107, 55, 167);*/}
 
 .skill-container .skill-tooltip {
     visibility: hidden;
@@ -311,23 +319,134 @@ html, body {
 }
 
 .content-category-slide-in {
+    display: inline-block;
+    width: 0px;
     background-color: var(--dark-grey_black);
     height: calc(100% - 73px);
     z-index: 3;
     position: absolute;
     right: 0;
     border-left: 2px solid var(--bud-green);
-    transition: width 0.3s;
+    transition: width 0.5s;
 }
 .content-category-slide-in__span{
     background-color: var(--bud-green);
     left: -40px;
     top: 40px;
     padding: 20px 15px;
-    position: relative;
+    position: absolute;
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
+.content-category-slide-in__span:hover{
+    cursor: pointer;
+}
+
+.project__cats__overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.project__cats__overlay__organizer {
+    overflow: auto;
+    margin: 20px;
+    width: calc(100% - 40px);
+}
+.project-card {
+    float: left;
+    margin: 20px;
+    width: 320px;
+    height: 400px;
+    background-color: transparent;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.project-card:hover .project-card-inner {
+  transform: rotateY(-180deg);
+}
+.project-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.project-card-front, .project-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+.project-card-back {
+    background-color: var(--dark-moss-green);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: rotateY(-180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.project-card-front {
+    background-color: var(--dark-moss-green);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.project-card-front__info {
+    width: 100%; 
+    padding-left: 20px; 
+    line-height: 24px;
+    text-align: left;
+}
+.project-card-back__info {
+    padding: 0px 10px; 
+    line-height: 24px;
+    text-align: center;
+}
+.h1-no-style {
+    font-weight: normal;
+}
+
+.project-slide-in {
+    display: inline-block;
+    width: 0px;
+    background-color: var(--dark-grey_black);
+    height: calc(100% - 73px);
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    border-left: 2px solid var(--bud-green);
+    transition: width 0.5s;
+}
+.project-slide-in__span{
+    background-color: var(--bud-green);
+    left: -40px;
+    top: 105px;
+    padding: 20px 15px;
+    position: absolute;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.project-slide-in__span:hover{
+    cursor: pointer;
+}
+
 .project__overlay {
-    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
 }

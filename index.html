@@ -8,7 +8,7 @@
     <link rel="icon" href="" />
     <link rel="stylesheet" href="src/index.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/3d360bd07a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
     <title>Tormak.dev</title>
   </head>
@@ -28,19 +28,27 @@
     </div>
     <div class="main-container">
       <div class="spacer-container">
-        <!--  maybe project preview slideshow here? -->
-        <!--  could do display of langs and frameworks ik -->
+        <img src="src/img/cpp.png" alt="" class="lang-img">
+        <img src="src/img/Python.png" alt="" class="lang-img">
+        <img src="src/img/java.png" alt="" class="lang-img">
+        <img src="src/img/javascript.png" alt="" class="lang-img">
+        <img src="src/img/html.png" alt="" class="lang-img">
+        <img src="src/img/css.png" alt="" class="lang-img">
+        <img src="src/img/php.png" alt="" class="lang-img">
       </div>
       <div class="main-container__body">
         <div class="sidebar-container">
           <h1 class="project-header">Projects</h1>
           <div class="project-btns-container">
-            <a id="swtor" class="project-btn">SWTOR</a>
-            <a id="rlbot" class="project-btn">RLBot</a>
-            <a id="discord" class="project-btn">Discord</a>
-            <a id="sb" class="project-btn">SpringBoot</a>
-            <a id="games" class="project-btn">Games</a>
-            <a id="other" class="project-btn">Other</a>
+            <a id="wd" class="project-btn">Web Dev</a>
+            <a id="backend" class="project-btn">Backend</a>
+            <a id="fs" class="project-btn">Full Stack</a>
+            <a id="other" class="project-btn">other</a>
+          </div>
+          <h3 class="project-header">Organizations</h3>
+          <div class="project-btns-container">
+            <a id="torc" class="project-btn">TORC</a>
+            <a id="extractors" class="project-btn">Extractors</a>
           </div>
         </div>
         <div class="main-container__body__main">
@@ -68,30 +76,17 @@
                 <div class="content-container__subskill-container">
                   <h2 class="content-container__header">Languages</h2>
                   <div class="content-container__subskill-container__content">
-                    <p class="skill-header">Javascript</p>
-                    <div class="skill-container">
-                      <div class="skill-bar js">
-                        <span class="skill-tooltip">Advanced</span>
-                      </div>
-                    </div>
-    
-                    <p class="skill-header">Java</p>
-                    <div class="skill-container">
-                      <div class="skill-bar java">
-                        <span class="skill-tooltip">Experienced</span>
-                      </div>
-                    </div>
-    
-                    <p class="skill-header">Python</p>
-                    <div class="skill-container">
-                      <div class="skill-bar py">
-                        <span class="skill-tooltip">Familiar</span>
-                      </div>
-                    </div>
     
                     <p class="skill-header">HTML</p>
                     <div class="skill-container">
                       <div class="skill-bar html">
+                        <span class="skill-tooltip">Advanced</span>
+                      </div>
+                    </div>
+
+                    <p class="skill-header">Javascript</p>
+                    <div class="skill-container">
+                      <div class="skill-bar js">
                         <span class="skill-tooltip">Advanced</span>
                       </div>
                     </div>
@@ -103,9 +98,23 @@
                       </div>
                     </div>
     
+                    <p class="skill-header">Java</p>
+                    <div class="skill-container">
+                      <div class="skill-bar java">
+                        <span class="skill-tooltip">Experienced</span>
+                      </div>
+                    </div>
+    
                     <p class="skill-header">PHP</p>
                     <div class="skill-container">
                       <div class="skill-bar php">
+                        <span class="skill-tooltip">Familiar</span>
+                      </div>
+                    </div>
+    
+                    <p class="skill-header">Python</p>
+                    <div class="skill-container">
+                      <div class="skill-bar py">
                         <span class="skill-tooltip">Familiar</span>
                       </div>
                     </div>
@@ -122,24 +131,11 @@
                 <div class="content-container__subskill-container">
                   <h2 class="content-container__header">Frameworks + APIs</h2>
                   <div class="content-container__subskill-container__content">
-                    <p class="skill-header">SpringBoot</p>
-                    <div class="skill-container">
-                      <div class="skill-bar sb">
-                        <span class="skill-tooltip">Intermediate</span>
-                      </div>
-                    </div>
   
-                    <p class="skill-header">JavaFX</p>
+                    <p class="skill-header">JDA</p>
                     <div class="skill-container">
-                      <div class="skill-bar jfx">
-                        <span class="skill-tooltip">Experienced</span>
-                      </div>
-                    </div>
-
-                    <p class="skill-header">React.js</p>
-                    <div class="skill-container">
-                      <div class="skill-bar react">
-                        <span class="skill-tooltip">beginner</span>
+                      <div class="skill-bar jda">
+                        <span class="skill-tooltip">Advanced</span>
                       </div>
                     </div>
   
@@ -150,10 +146,10 @@
                       </div>
                     </div>
   
-                    <p class="skill-header">JDA</p>
+                    <p class="skill-header">JavaFX</p>
                     <div class="skill-container">
-                      <div class="skill-bar jda">
-                        <span class="skill-tooltip">Advanced</span>
+                      <div class="skill-bar jfx">
+                        <span class="skill-tooltip">Experienced</span>
                       </div>
                     </div>
   
@@ -161,6 +157,20 @@
                     <div class="skill-container">
                       <div class="skill-bar da">
                         <span class="skill-tooltip">Familiar</span>
+                      </div>
+                    </div>
+
+                    <p class="skill-header">SpringBoot</p>
+                    <div class="skill-container">
+                      <div class="skill-bar sb">
+                        <span class="skill-tooltip">Intermediate</span>
+                      </div>
+                    </div>
+
+                    <p class="skill-header">React.js</p>
+                    <div class="skill-container">
+                      <div class="skill-bar react">
+                        <span class="skill-tooltip">beginner</span>
                       </div>
                     </div>
                   </div>
@@ -178,7 +188,7 @@
                     <b>Complexity:</b> High <br>
                     <b>Length:</b> 270+ hours <br>
                     <b>Status:</b> Beta <br>
-                    <b>Groups:</b> TORCommunity/SWTOR
+                    <b>Organizations:</b> TORC/Extractors
                   </p>
                 </div>
               </div>
@@ -188,76 +198,459 @@
       </div>
 
       <!-- will have the slide in containers here -->
-      <div id="projectOverlay" class="content-category-slide-in">
-        <span class="content-category-slide-in__span">&#xab;</span> <!--&#xbb; for >>-->
-        <div id="swtorOverlay" class="project__overlay" style="display: none;">
+      <div id="projectCatsOverlay" class="content-category-slide-in" style="width: calc(100% - 162px);"> <!---->
+        <span id="openAndCloseSpan__cats" class="content-category-slide-in__span">&#xab;</span>
+        <div id="wdOverlay" class="project__cats__overlay"> <!-- style="display: none;"-->
+          <h1 class="h1-no-style">Web Developement</h1>
+          <div class="project__cats__overlay__organizer">
 
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Portfolio site</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b> low <br>
+                    <b>Length:</b> Ongoing <br>
+                    <b>Status:</b> Ongoing <br>
+                    <b>Organizations:</b> Self <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+                    
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">TORCommunity.com</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b> Varying <br>
+                    <b>Length:</b> Ongoing <br>
+                    <b>Status:</b> Ongoing <br>
+                    <b>Organizations:</b> TORC <br>
+                    <b>Collaborative:</b> yes
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio assumenda quod placeat harum vel blanditiis commodi, porro voluptas. Soluta eos sunt ipsa inventore quia necessitatibus expedita ea commodi architecto nostrum repellat, molestiae rerum repellendus ex blanditiis est, consequuntur laborum voluptatibus!
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Character Designer</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> yes
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Modbot UI</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">MemeDB UI</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style" style="margin-bottom: 0px;">Minesweeper</h2>
+                  <h3 class="h1-no-style" style="margin-top: 2px;">(animated)</h3>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Minesweeper</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Pong</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Tetris</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> no
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div id="rlbotOverlay" class="project__overlay" style="display: none;">
+        <div id="backendOverlay" class="project__cats__overlay" style="display: none;">
+          <h1 class="h1-no-style">Backend Developement</h1>
+          <div class="project__cats__overlay__organizer">
+            
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Modbot Backend</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> yes
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
 
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">MemeDB Backend</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> yes
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div id="discordOverlay" class="project__overlay" style="display: none;">
+        <div id="fsOverlay" class="project__cats__overlay" style="display: none;">
+          <h1 class="h1-no-style">Full Stack Developement</h1>
+          <div class="project__cats__overlay__organizer">
+            
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">Modbot Backend</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> yes
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
 
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-card">
+              <div class="project-card-inner">
+                <div class="project-card-front">
+                  <h2 class="h1-no-style">MemeDB Backend</h2>
+                  <img src="" alt="project-image" height="270px">
+                  <p class="project-card-front__info">
+                    <b>Complexity:</b>  <br>
+                    <b>Length:</b>  <br>
+                    <b>Status:</b>  <br>
+                    <b>Organizations:</b>  <br>
+                    <b>Collaborative:</b> yes
+                  </p>
+                </div>
+                <div class="project-card-back">
+                  <h2 class="h1-no-style">Overview</h2>
+                  <p class="project-card-back__info">
+
+                  </p>
+                  <br>
+                  <br>
+                  <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <div id="sbOverlay" class="project__overlay" style="display: none;">
-
+        <div id="otherOverlay" class="project__cats__overlay" style="display: none;">
+          <h1 class="h1-no-style">Other</h1>
         </div>
         
-        <div id="gamesOverlay" class="project__overlay" style="display: none;">
-
+        <div id="torcOverlay" class="project__cats__overlay" style="display: none;">
+          <h1 class="h1-no-style">Organizations: TORCommunity</h1>
         </div>
         
-        <div id="otherOverlay" class="project__overlay" style="display: none;">
+        <div id="extractorsOverlay" class="project__cats__overlay" style="display: none;">
+          <h1 class="h1-no-style">Organizations: SWTOR Extractors</h1>
+        </div>
+      </div>
+      <!-- need 1 for each project -->
+      <div id="projectOverlay" class="project-slide-in">
+        <span id="openAndCloseSpan__proj" class="project-slide-in__span">&#xab;</span>
+        <div id="toonDesigner" class="project__overlay" style="display: none;">
 
         </div>
       </div>
     </div>
     <script type="text/javascript">
-      let swtorBtn = document.getElementById("swtor");
-      let rlbotBtn = document.getElementById("rlbot");
-      let discordBtn = document.getElementById("discord");
-      let springBtn = document.getElementById("sb");
-      let gamesBtn = document.getElementById("games");
+      let wdBtn = document.getElementById("wd");
+      let backendBtn = document.getElementById("backend");
+      let fsBtn = document.getElementById("fs");
       let otherBtn = document.getElementById("other");
+      let torcBtn = document.getElementById("torc");
+      let extractorsBtn = document.getElementById("extractors");
       
-      let swtorOverlay = document.getElementById("swtorOverlay");
-      let rlbotOverlay = document.getElementById("rlbotOverlay");
-      let discordOverlay = document.getElementById("discordOverlay");
-      let springOverlay = document.getElementById("sbOverlay");
-      let gamesOverlay = document.getElementById("gamesOverlay");
+      let wdOverlay = document.getElementById("wdOverlay");
+      let backendOverlay = document.getElementById("backendOverlay");
+      let fsOverlay = document.getElementById("fsOverlay");
       let otherOverlay = document.getElementById("otherOverlay");
+      let torcOverlay = document.getElementById("torcOverlay");
+      let extractorsOverlay = document.getElementById("extractorsOverlay");
 
-      let projectOverlay = document.getElementById("projectOverlay");
+      let projectCatsOverlay = document.getElementById("projectCatsOverlay");
+      let oAp = document.getElementById("openAndCloseSpan__cats");
 
-      let projectBtnList = [swtorBtn, rlbotBtn, discordBtn, springBtn, gamesBtn, otherBtn];
-      let projectOverlayList = [swtorOverlay, rlbotOverlay, discordOverlay, springOverlay, gamesOverlay, otherOverlay];
+      let projectCatsBtnList = [wdBtn, backendBtn, fsBtn, otherBtn, torcBtn, extractorsBtn];
+      let projectCatsOverlayList = [wdOverlay, backendOverlay, fsOverlay, otherOverlay, torcOverlay, extractorsOverlay];
 
 
-      for (let i = 0; i < projectBtnList.length; i++) {
-        let pb = projectBtnList[i];
-        let po = projectOverlayList[i];
+      for (let i = 0; i < projectCatsBtnList.length; i++) {
+        let pb = projectCatsBtnList[i];
+        let po = projectCatsOverlayList[i];
 
         pb.addEventListener("click", () => {
           resetElems();
           pb.classList.add("project-btn__displaying");
-          if (projectOverlay.style.width != "calc(100% - 162px)") {
-            projectOverlay.style.width = "calc(100% - 162px)";
+          if (projectCatsOverlay.style.width != "calc(100% - 162px)") {
+            projectCatsOverlay.style.width = "calc(100% - 162px)";
+            oAp.innerHTML = '&#xbb;';
           }
           po.style.display = "flex";
         });
       }
 
       function resetElems() {
-        projectOverlayList.forEach((po) => {
+        projectCatsOverlayList.forEach((po) => {
           po.style.display = "none";
         });
-        projectBtnList.forEach((pb) => {
+        projectCatsBtnList.forEach((pb) => {
           pb.classList.remove("project-btn__displaying");
         })
       }
+
+      oAp.addEventListener("click", () => {
+        if (projectCatsOverlay.style.width == '0px') {
+          projectCatsOverlay.style.width = "calc(100% - 162px)";
+          oAp.innerHTML = '&#xbb;';
+          displayFeaturedProj();
+        } else {
+          projectCatsOverlay.style.width = 0;
+          oAp.innerHTML = '&#xab;';
+          resetElems();
+        }
+      });
+
+      function displayFeaturedProj() {
+
+      }
     </script>
+
+    <!-- Project template: -->
+    <!-- <div class="project-card">
+      <div class="project-card-inner">
+        <div class="project-card-front">
+          <h2 class="h1-no-style">Title</h2>
+          <img src="" alt="project-image" height="270px">
+          <p class="project-card-front__info">
+            <b>Complexity:</b>  <br>
+            <b>Length:</b>  <br>
+            <b>Status:</b>  <br>
+            <b>Organizations:</b>  <br>
+            <b>Collaborative:</b>
+          </p>
+        </div>
+        <div class="project-card-back">
+          <h2 class="h1-no-style">Overview</h2>
+          <p class="project-card-back__info">
+
+          </p>
+          <br>
+          <br>
+          <div>See more: <a href=".#"><i class="fas fa-external-link-alt"></i></a></div>
+        </div>
+      </div>
+    </div> -->
   </body>
 </html>
