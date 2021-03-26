@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/minesweeper.css">
+  <link rel="stylesheet" href="src/css/dropdownMenu.css">
+  <link rel="stylesheet" href="src/css/modal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap" rel="stylesheet">
+  <title>Minesweeper</title>
+</head>
+
+<body>
+  <div class="page-centerer">
+    <div class="game-container">
+      <div id="ms-header" class="header">
+        <div id="difficulty-dropdown-menu" class="difficulty-dropdown-menu" style="width: 100px; height: 50px;">
+          <select id="difficultySelector">
+            <option value="default">Easy</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="custom">Custom</option>
+          </select>
+        </div>
+        <div class="flags-left">
+          <img src="src/img/flag.png" alt="flags" width="auto" height="28px">
+          <h2 id="flagsLeft" style="color: white;">0</h2>
+        </div>
+      </div>
+      <div id="gameBoard">
+        
+      </div>
+    </div>
+    <div id="looseModal" class="modal">
+      <div class="modal-content">
+        <h1 class="looseModalH1">Game Over</h1>
+        <h3>Time: </h3>
+        <button type="button" class="newGameButton" id="newGameOnLooseButton">NEW GAME</button>
+      </div>
+    </div>
+
+    <div id="winModal" class="modal">
+      <div class="modal-content">
+        <h1 class="winModalH1">You Won!</h1>
+        <h3>Time: </h3>
+        <button type="button" class="newGameButton" id="newGameOnWinButton">NEW GAME</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="src/js/minesweeper.js"></script>
+  <script src="src/js/dropdown.js"></script>
+</body>
+
+</html>

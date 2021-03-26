@@ -1,0 +1,276 @@
+/*about bot divs*/
+@media(min-width:1420px) {
+  .purpose-div {
+    width: 606.8px;
+  }
+  .purpose-container {
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+  }
+  .commands-div {
+    width: 606.8px;
+  }
+  .commands-container {
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+  }
+  .docs-div{
+    width: 606.8px;
+  }
+  .docs-container{
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+  }
+  .docs-ex{
+    width: 606.8px;
+  }
+}
+
+@media(min-width:606.8px) and (max-width:1419px){
+  .purpose-div {
+    width: 606.8px;
+  }
+  .purpose-container {
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .commands-div {
+    width: 606.8px;
+  }
+  .commands-container {
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .docs-div{
+    width: 606.8px;
+  }
+  .docs-container{
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .docs-ex{
+    width: 606.8px;
+  }
+}
+
+@media(max-width:606.7px){
+  .purpose-div {
+    width: 100%;
+  }
+  .purpose-container {
+    text-align: center;
+    line-height: 50px;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .info-header{
+    font-size: 5vw;
+  }
+  .h3{
+    font-size: 3vw;
+  }
+  .commands-div {
+    width: 100%;
+  }
+  .commands-container {
+    text-align: center;
+    line-height: 50px;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .docs-div{
+    width: 100%;
+  }
+  .docs-container{
+    text-align: center;
+    line-height: 50px;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .docs-ex{
+    width: 100%;
+  }
+}
+
+:root {
+  --bar-height: 72px;
+  --color-primary: #e89c0e;
+  --color-primary-dark: #bd7f0b;
+  --gray-blue-dark: #1b1a24;
+  --gray-blue-light: #424157;
+}
+
+.list-div{
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.jump-a-tag {
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+}
+
+/*Container*/
+.container {
+  padding-top: var(--bar-height);
+  display: grid;
+  grid-template-rows: 420 1fr;
+  height: 100%;
+}
+
+/*Modbot Logo div*/
+.modbot-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 420px;
+}
+
+.modbot-logo__name {
+  color: var(--color-primary);
+  font-weight: normal;
+  font-size: 60px;
+  height: 75px;
+  margin-bottom: 0;
+}
+
+/*Information Section*/
+.info-section {
+  background: var(--gray-blue-dark);
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*spacer div classes*/
+.spacer-div{
+  height: 200px;
+  width: 100%;
+}
+
+.spacer-div__half {
+  height: 100px;
+  width: 100%;
+}
+
+.spacer-div__three-quaters {
+  height: 150px;
+  width: 100%;
+}
+
+.v-spacer-div{
+  height: 100%;
+  width: 200px;
+}
+
+.v-spacer-div__half{
+  height: 100%;
+  width: 100px;
+}
+
+.v-spacer-div__half{
+  height: 100%;
+  width: 150px;
+}
+
+.spacer-60px{
+  width: 60px;
+  height: 100%;
+}
+
+.unclickable{
+  background: #757171;
+}
+
+.header {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: #0a0601;
+  border-bottom: 2px solid #444447;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  width: 100%;
+}
+
+/*Makes header/nav bar stay at the top of the screen*/
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/*keeps image in the correct place*/
+.header__img-div {
+  margin-left: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+/*Login div*/
+.login-button__div {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 34px;
+  color: white;
+  background: #e89c0e;
+  border-radius: 8px;
+}
+
+.login-button__div:hover {
+  background: #bd7f0b;
+}
+
+.login-button {
+  height: 100%;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14px;
+}
+
+.login-button__h3{
+  width: 64px;
+  font-weight: normal;
+  text-decoration: none;
+}

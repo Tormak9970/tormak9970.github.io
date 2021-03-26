@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="src/img/favicon.ico" />
+    
+    <link rel="stylesheet" href="../../u-src/u-css/u-nav.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-universal.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-grid.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-footer.css"/>
+    <link rel="stylesheet" href="src/css/discordOverview.css"/>
+    <title>inDev Developement</title>
+    <style>
+      
+    </style>
+  </head>
+  <body ontouchstart>
+    <div class="grid">
+      <header>
+        <nav class="nav">
+          <a href="discord.html" class="homeLink"><img src="src/img/inDevBotLogo.png" alt="logo" width="125" height="94"/></a>
+          <a href="discordOverview.html" class="nav__link">Discord and Bots</a>
+          <a href="discord.html" class="nav__link">Official inDev Bot</a>
+        </nav>
+      </header>
+      <div class="aestheticDiv">
+      </div>
+      <div class="overviewBody">
+        <div class="bodyContainer-left">
+          <div class="whyDisc">
+            <h2 style="justify-self: center;">Why Discord?</h2>
+            <p>Why Discord? Their are many reasons why discord is a great tool for learning programming. Number 1, its a messaging platform,
+              so you can use it for other purposes as well. Number 2, it supports sending code that is properly formatted, making it very easy to read. Number 3, its very user friendly, and it doesnt take long to learn the user
+              interface. But most importantly, they have great support for making bots that users can interact with.
+            </p>
+          </div>
+
+          <div class="sending-code__img">
+            <img id="snipImg" src="src/img/Discord-snippit.png" alt="Discord UI">
+
+          </div>
+
+          <div class="discord-bots">
+            <h2 style="justify-self: center;">Discord Bots</h2>
+            <p>The best thing about discord is the amazing support for bots. Bots are a great way to add fun features to your server, and just as fun to make.
+              There is alot to understand before that though, and I <b><i>HIGHLY</i></b> recommend that you have at least a basic understanding of the language you want to use,
+              because programming a discord bot can become complicated very quickly. So, lets unpack the image to the right. <br/>
+              <span style="color: red;"><b>1</b></span> - user's name, often used to check permissions.<br/>
+              <span style="color: red;"><b>2</b></span> - the bot's prefix. this is really important because this tells the bot "hey this might be a command", because it checks every message that is sent.<br/>
+              <span style="color: red;"><b>3</b></span> - the actual command. in this example it is 'help', which is a command every bot should have.<br/>
+              <span style="color: red;"><b>4</b></span> - not as important as some of the other parts of the image, this is the bot's profile picture. Just kind of a fun thing to customize.<br/>
+              <span style="color: red;"><b>5</b></span> - bot's name, again, not as useful as some of the other parts of the image, but it can be useful in rare instances.<br/>
+              <span style="color: red;"><b>6</b></span> - the bot account indicator. This is really important, because it indicates that this account is a bot. Most bots use this to check if a message was sent by a bot, and if it was, dont respond to it.<br/>
+              <span style="color: red;"><b>7</b></span> -last but not least, the bots response. This is what the bot sends, and based on what command it recieves, it sends different things, it can even send a styled up <a style="color: #e89c0e" target="_blank" rel="noopener noreferrer" href="https://leovoel.github.io/embed-visualizer">embed</a>
+            </p>
+          </div>
+        </div>
+        <div class="bodyContainer-right">
+          <div class="whyDisc__img">
+            <img id="uiImg" src="src/img/Discord layout.png" alt="Discord UI">
+          </div>
+
+          <div class="sending-code">
+            <h2 style="justify-self: center;">Code Snippits</h2>
+            <p>Sending code can be a pain. Luckily Discord has a great feature that formats the code and makes it more readable.
+              First, you need to find the back tick on your keyboard, (right under the escape key), because it is used to signify that you are sending code.
+              There are 3 ways to send a code snippit. Number 1, using 1 back tick, like this: `code here`. This should only be used if your code fits on one line.
+              Number 2, using 3 back ticks, like this: ```code``` this shouldnt realy be used, but it works. and finally, number 3, using 3 back ticks and specifying
+              the language, then hitting enter like the example on the left. This is the best way, and should be used most of the time.
+            </p>
+          </div>
+
+          <div class="discord-bots__img">
+            <img src="src/img/Discord-botmsg.png" alt="A bot sending a message" width="725" height="544">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-container">
+        <h3 class="footer-container__text">Developed using JDA</h3>
+        <h3 class="footer-container__text">Developer: Tormak</h3>
+      </div>
+    </div>
+    
+  </body>
+</html>

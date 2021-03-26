@@ -1,0 +1,92 @@
+.discordBody {
+    margin: 20px;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 2fr 350px;
+    column-gap: 2em;
+}
+
+.discordBody__text-field {
+    color: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+}
+
+.text-field__left {
+    margin-left: 45px;
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 1.5em;
+    line-height: 35px;
+}
+
+.text-field__right {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 1.5em;
+}
+
+.invButton {
+    max-height: 36px;
+    width: 100px;
+    padding: 10px;
+    color: white;
+    background-color: #e89c0e;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-side {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 2em;
+    height: 500px;
+}
+
+.feature-button {
+    width: 100px;
+    padding: 10px;
+    color: white;
+    background-color: #e89c0e;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.accordion__button {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    cursor: pointer;
+    background: #e89c0e;
+    transition: background 0.2s;
+    color: white;
+}
+
+.accordion__button::after {
+    content: '\25be';
+    color: white;
+    float: right;
+    transform: scale(1.5);
+}
+
+.accordion__button--active { background: #bd7f0b; }
+.accordion__button--active::after { content: '\25b4'; }
+
+.accordion__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+
+    padding: 0 15px;
+    border: #e89c0e;
+    border-radius: 5px;
+    background: #6e6e6a;
+}

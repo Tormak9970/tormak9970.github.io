@@ -1,0 +1,112 @@
+.p1-up-button {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.p1-down-button {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.p2-up-button {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.p2-down-button {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.reset-button {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.pause-button {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.settings-modal-content {
+  left: 38%;
+  background-color: transparent;
+  margin: 5%; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #e89c0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  height: 490px;
+}
+
+.back-button {
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.back-button:hover {
+  transform: scale(1.2);
+}
+
+.settings-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  overflow: auto; /* Enable scroll if needed */
+  top: 100px;
+  width: 600px;
+  height: 600px;
+  z-index: 4;
+}
+
+.settings-button-div {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

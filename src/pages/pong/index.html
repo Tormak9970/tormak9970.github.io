@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="src/css/modal.css">
+  <link rel="stylesheet" href="src/css/settings.css">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <title>Pong</title>
+</head>
+<body>
+  <div class="page-centerer">
+    <div class="game-container" id="gameContainer">
+      <div id="game-header" class="header">
+        <div class="p1-score-container">
+          <h2 id="p1-score" style="color: white;">P1: 0</h2>
+        </div>
+        <div id="title" class="title-div" style="width: 100px; height: 50px;">
+          <h1 class="title-header">Pong</h2>
+        </div>
+        <div class="p2-score-container">
+          <h2 id="p2-score" style="color: white;">P2: 0</h2>
+        </div>
+      </div>
+      <div id="canvas-container" class="canvas-container">
+        <canvas id="gameBoard" style="position: absolute; background: black; z-index: 1;"></canvas>
+      </div>
+    </div>
+
+    <div id="optionModal" class="option-modal">
+      <div class="option-modal-content">
+        <button type="button" class="playButton" id="playButton">PLAY</button>
+        <button type="button" class="supportButton" id="supportButton">SUPPORT</button>
+        <button type="button" class="settingsButton" id="settingsButton">SETTINGS</button>
+      </div>
+    </div>
+
+    <div id="settingsModal" class="settings-modal">
+      <div class="settings-modal-content">
+        <div id="p1-up-div" class="settings-button-div">
+          <h3 style="color:white">Player 1 paddle up mapping</h3>
+          <button type="button" class="p1-up-button" id="p1PaddleUpButton">W</button>
+        </div>
+        <div id="p1-down-div" class="settings-button-div">
+          <h3 style="color:white">Player 1 paddle down mapping</h3>
+          <button type="button" class="p1-down-button" id="p1PaddleDownButton">S</button>
+        </div>
+        <div id="p2-up-div" class="settings-button-div">
+          <h3 style="color:white">Player 2 paddle up mapping</h3>
+          <button type="button" class="p2-up-button" id="p2PaddleUpButton">ArrowUp</button>
+        </div>
+        <div id="p2-down-div" class="settings-button-div">
+          <h3 style="color:white">Player 2 paddle down mapping</h3>
+          <button type="button" class="p2-down-button" id="p2PaddleDownButton">ArrowDown</button>
+        </div>
+
+        <div id="reset-div" class="settings-button-div">
+          <h3 style="color:white">Reset Game mapping</h3>
+          <button type="button" class="reset-button" id="resetButton">Space</button>
+        </div>
+        <div id="pause-div" class="settings-button-div">
+          <h3 style="color:white">Pause Game mapping</h3>
+          <button type="button" class="pause-button" id="pauseButton">Esc</button>
+        </div>
+        <div class="back-button-div">
+          <button type="button" class="back-button" id="backButton">Back</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sak-div" id="sakDiv">
+      <div class="sak-div-content">
+        <h2 class="sak-header">Press Any Key.</h2>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/js/pong.js"></script>
+</body>
+</html>

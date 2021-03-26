@@ -1,0 +1,97 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #1b1a24;
+}
+
+.page-centerer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.canvas-container{
+  width: 400px;
+  height: 800px;
+}
+
+.holding-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vCanvas {
+  z-index: 2;
+}
+
+.header {
+  height: 60px;
+  width: 400px;
+  background: #e89c0e;
+  display: flex;
+  column-gap: 7em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.sak-div {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  overflow: auto; /* Enable scroll if needed */
+  width: 400px;
+  top: 300px;
+  z-index: 4;
+}
+
+.sak-div-content {
+  left: 38%;
+  background-color: transparent;
+  margin: 5%; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #e89c0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sak-header {
+  color: rgb(133, 131, 131);
+}
+
+.hold-header {
+  color: white;
+  height: 60px;
+  width: 200px;
+  background: #e89c0e;
+  display: flex;
+  column-gap: 7em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}

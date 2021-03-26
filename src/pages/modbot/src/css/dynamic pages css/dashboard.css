@@ -1,0 +1,124 @@
+/*finished classes*/
+.guild-title{
+  width: 1500px;
+  display: flex;
+}
+.guild-basic-info{
+  width: 1500px;
+  display: flex;
+  background:  #0e0d13;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+}
+.info-div{
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  column-gap: 10px;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.info-h3{
+  color: #9c9c9c;
+  font-size: 16px;
+  text-align: center;
+  height: 100%;
+}
+.info-h3__content{
+  font-size: 16px;
+  text-align: center;
+  height: 100%;
+}
+.dynamic-content-grid{
+  margin: 0;
+  padding: 0;
+  width: 1500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2em;
+}
+.guild-bot-info, .general{
+  background:  #0e0d13;
+}
+.guild-bot-info__h2, .general__h2{
+  padding-left: 20px;
+}
+.guild-bot-info__content-div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.prefix-form-container{
+  height: 100%;
+  margin-left: 25px;
+  margin-bottom: 45px;
+}
+.guild-bot-info__form{
+  display: inline-flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+.change-btn{
+  font-size: 22px;
+  color: white;
+  padding: 10px
+}
+.btn{
+  height: 49px;
+  border: 2px solid #e89c0e;
+  background: #e89c0e;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn:hover{
+  background: #bd7f0b;
+  cursor: pointer;
+}
+.bot-info__text-area::placeholder{
+  padding-left: 4px;
+  font-size: 24px;
+}
+.mini-h2{
+  font-size: 18px;
+}
+.bot-info__text-area{
+  display: inline-block;
+  font-size: 24px;
+  color: white;
+  height: 40px;
+  border: 2px solid rgb(14, 131, 139);
+  border-radius: 5px;
+  background: #08070a;
+  resize: none;
+  margin-right: 40px;
+  line-height: 40px;
+}
+.bot-info__text-area:focus{
+  outline: none;
+  border: 2px solid #e89c0e;
+}
+.admin-only-btn-container{
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+/*unfinished classes*/
+
+
+
+/*lighter then bg 
+  background:  #2a2838;
+
+  darker then bg
+  background:  #0e0d13;
+
+  darker orange
+  #bd7f0b
+  */

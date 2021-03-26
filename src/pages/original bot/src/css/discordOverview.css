@@ -1,0 +1,52 @@
+.bodyContainer-left {
+    margin-left: 45px;
+    line-height: 35px;
+}
+
+.bodyContainer-right {
+    margin-left: 55px;
+    line-height: 35px;
+}
+
+.overviewBody {
+    margin: 20px;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2em;
+}
+
+.whyDisc {
+    display: grid;
+    justify-content: center;
+}
+
+.whyDisc__img {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.sending-code {
+    display: grid;
+    justify-content: center;
+}
+
+.sending-code__img {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.discord-bots {
+    display: grid;
+    justify-content: center;
+}
+
+.discord-bots__img {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

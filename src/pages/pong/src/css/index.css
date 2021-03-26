@@ -1,0 +1,77 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #1b1a24;
+}
+
+.page-centerer {
+  height: 100%;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.game-container {
+  display: grid;
+  grid-template-rows: 60px 1fr;
+}
+
+.header {
+  height: 60px;
+  width: 800px;
+  background: #e89c0e;
+  display: flex;
+  column-gap: 7em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-header {
+  color: white;
+  font-family: 'Audiowide', cursive;
+}
+
+.p1-score-container {
+  font-family: 'Audiowide', cursive;
+}
+
+.p2-score-container {
+  font-family: 'Audiowide', cursive;
+}
+
+.sak-div {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  overflow: auto; /* Enable scroll if needed */
+  width: 400px;
+  top: 300px;
+  z-index: 4;
+}
+
+.sak-div-content {
+  left: 38%;
+  background-color: transparent;
+  margin: 5%; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #e89c0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sak-header {
+  color: rgb(133, 131, 131);
+}

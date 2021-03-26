@@ -1,0 +1,68 @@
+
+.playButton {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: all .3s ease-in-out;
+}
+
+.playButton:hover {
+  transform: scale(1.2);
+}
+
+.settingsButton {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.settingsButton:hover {
+  transform: scale(1.2);
+}
+
+.option-modal-content {
+  left: 38%;
+  background-color: transparent;
+  margin: 5%; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #e89c0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.supportButton {
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #e89c0e;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.supportButton:hover {
+  transform: scale(1.2);
+}
+
+.option-modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  overflow: auto; /* Enable scroll if needed */
+  top: 300px;
+  z-index: 4;
+}

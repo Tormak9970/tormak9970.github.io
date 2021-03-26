@@ -1,0 +1,26 @@
+.accordian {
+  background-color: #0e0d13;
+  color: #e89c0e;
+  cursor: pointer;
+  padding-left: 18px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordian:hover {
+  background-color: #191722;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.accordian-content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

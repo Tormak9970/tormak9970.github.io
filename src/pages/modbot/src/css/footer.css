@@ -1,0 +1,108 @@
+.footer{
+  z-index: 2;
+  color: white;
+  background-color: #0a0601;
+  border-top: 2px solid #444447;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 82px;
+  width: 100%;
+}
+
+.name-and-logo-container{
+  height: 40px;
+  width: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container{
+  height: 40px;
+  width: 260px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-to-server__container{
+  width: 120px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-to-server{
+  background: #e89c0e;
+  border: 2px solid #e89c0e;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.add-to-server:hover{
+  background: #bd7f0b;
+  border: 2px solid #e89c0e;
+}
+
+.add-to-server__h2{
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
+.add-to-server__button{
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.get-discord__container{
+  width: 120px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.get-discord{
+  background: #e89c0e;
+  border: 2px solid #e89c0e;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.get-discord:hover{
+  background: #bd7f0b;
+  border: 2px solid #e89c0e;
+}
+
+.get-discord__h2{
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
+.get-discord__button{
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}

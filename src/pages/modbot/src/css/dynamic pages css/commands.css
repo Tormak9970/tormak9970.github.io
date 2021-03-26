@@ -1,0 +1,51 @@
+.command-title{
+  width: 1500px;
+  display: flex;
+}
+.command-basic-info{
+  width: 1500px;
+  display: flex;
+  background:  #0e0d13;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+}
+.cmd-btn-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.cmd-info-h3{
+  color: white;
+  font-size: 20px;
+}
+.cmd-pTag{
+  color: #9c9c9c;
+  width: 70%;
+  text-align: center;
+}
+.cmd-desc-h3{
+  text-decoration: none;
+  font-size: 16px;
+  color: #9c9c9c;
+}
+
+.commands-container{
+  display: grid;
+  column-gap: 2em;
+  row-gap: 2em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.command-div{
+  background:  #0e0d13;
+  width: 350px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}

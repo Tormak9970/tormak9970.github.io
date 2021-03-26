@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="src/img/favicon.png" />
+    
+    <link rel="stylesheet" href="../../u-src/u-css/u-nav.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-universal.css"/>
+    <link rel="stylesheet" href="src/css/upload.css"/>
+    <title>memeDB Upload</title>
+    <style>
+      
+    </style>
+  </head>
+  <body ontouchstart>
+    <div class="grid">
+      <header>
+        <nav class="nav">
+          <a href="homepage.html" class="homeLink"><img src="src/img/Pepe-slick.png" alt="logo" width="54" height="54"/></a>
+          <a href="displayMeme.html" class="nav__link">Meme DB</a>
+          <a href="upload.html" class="nav__link">Upload</a>
+          <a href="search.html" class="nav__link">Search</a>
+        </nav>
+      </header>
+      <div class="aestheticDiv">
+      </div>
+      <div class="body">
+        <div class="upload-form__container">
+          <form id="upload-form" class="form">
+            <div class="form__logo-container">
+              <img class="form__logo" src="src/img/Pepe-slick.png"  alt="logo" width="100px" height="100px"/>
+            </div>
+    
+            <div class="form__asthetic-div"></div>
+    
+            <div class="form__content">
+              <div class="form__header">Submission Form</div>
+                <input id="title" class="form__input" type="text" name="title" placeholder="Title">
+                <input id="uploaderEmail" class="form__input" type="text" name="email" placeholder="Your Email">
+                <div class="form__item" style="margin-bottom: 15px;">
+                  <div class="drop-zone">
+                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                    <input id="fileUploadDropZone" type="file" name="file" class="drop-zone__input">
+                  </div>
+                </div>
+                <div class="form__isNSFW" style="margin-bottom: 10px;">
+                  <label class="form__checkbox-nsfw" for="nsfwCheckbox">
+                    <input class="form__checkbox-nsfw__input" type="checkbox" name="isNSFW" id="nsfwCheckbox">
+                    <div class="form__checkbox-nsfw__box"></div>
+                    Meme Contains NSFW Content
+                  </label>
+                </div>
+                <div class="form__isNSFW">
+                  <label class="form__checkbox-nsfw" for="agreementCheckbox">
+                    <input class="form__checkbox-nsfw__input" type="checkbox" name="hasAgreed" id="agreementCheckbox">
+                    <div class="form__checkbox-nsfw__box"></div>
+                    <h3 style="font-size: 20px; font-weight: normal;">I agree to the <a href="TOS.html" style="text-decoration: none; color: #e89c0e;">T.O.S.</a></h3>
+                  </label>
+                </div>
+                <button class="form__button" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="src/js/UploadMeme.js"></script>
+</html>

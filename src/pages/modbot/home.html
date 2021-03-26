@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/home.css">
+  <link rel="stylesheet" href="src/css/mb-universal.css">
+  <link rel="stylesheet" href="src/css/footer.css">
+  <link rel="stylesheet" href="src/css/snackbar.css">
+  <link rel="shortcut icon" href="src/img/logo.png">
+  <title>Modbot Landing</title>
+</head>
+<body>
+  <header id="navbar" class="header sticky">
+    <a class="header__img-div" href="home.html">
+      <img src="src/img/logo.png" alt="logo" width="50" height="50">
+    </a>
+    <a href="#purpose" class="purpose jump-a-tag">
+      <h3 class="h3">Purpose</h3>
+    </a>
+    <a href="#commands" class="commands jump-a-tag">
+      <h3 class="h3">Commands</h3>
+    </a>
+    <a href="#docsATag" class="docs jump-a-tag">
+      <h3 class="h3">Docs</h3>
+    </a>
+    <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=749635340330991687&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&response_type=code&scope=identify%20email%20connections%20guilds" class="login-button">
+      <div class="login-button__div">
+        <h3 class="login-button__h3">Login</h3>
+      </div>
+    </a>
+  </header>
+  <div class="container">
+    <div class="modbot-logo">
+      <img src="src/img/logo_200.png" alt="logo" width="200" height="200">
+      <a id="purpose">
+        <h1 class="modbot-logo__name">Modbot</h1>
+      </a>
+    </div>
+    <div class="info-section">
+      <div class="spacer-div"></div>
+      <h1 class="purpose-header info-header">Purpose</h1>
+      <div class="purpose-container">
+        <div class="purpose-div">
+          <p>The goal of Modbot is to provide a free, 
+            user friendly bot that is versitile, and can assist 
+            you in moderating and controlling your server. Below 
+            you will find all the information you need to get started 
+            using the bot.</p>
+        </div>
+      </div>
+      <a id="commands">
+        <div class="spacer-div"></div>    
+      </a>
+      <div class="spacer-div__three-quaters"></div>
+
+      <div class="commands-container">
+        <div class="commands-div">
+          <h1 class="commands-header info-header">Commands</h1>
+          <p>Modbot is meant for, well, moderation. The Commands 
+            below are all of the base commands the bot has. It 
+            also has the ability to use custom commands you 
+            write! If that is too daunting, check out the list of 
+            commands other people have made and see if one fits your need.</p>
+        </div>
+        <div class="v-spacer-div"></div>
+        <div class="commands-div">
+          <h1 class="commands-header info-header">List:</h1>
+          <div class="list-div">
+            <div class="spacer-60px"></div>
+            <div class="spacer-60px"></div>
+            <ul class="ul-div">
+              <li class="list-item">ban</li>
+              <li class="list-item">kick</li>
+              <li class="list-item">mute</li>
+              <li class="list-item">server info</li>
+              <li class="list-item">bot info</li>
+            </ul>
+            <div class="spacer-60px"></div>
+            <ul class="ul-div">
+              <li class="list-item">user info</li>
+              <li class="list-item">reaction roles</li>
+              <li class="list-item">auto roles</li>
+              <li class="list-item">ban words</li>
+              <li class="list-item">custom commands</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="spacer-div"></div>
+      <div class="spacer-div__three-quaters"></div>
+      
+      <div class="docs-container">
+        <div class="docs-div">
+          <a id="docsATag">
+            <h1 class="docs-header info-header">Analytics</h1>
+          </a>
+          <p>The docs explain a little bit more about custom commands. They also have example commands, and explain the usages of each variable more in-depth.
+          </p>
+        </div>
+        <div class="v-spacer-div"></div>
+        <div class="docs-ex">
+          <h1 class="docs-header info-header">Example:</h1>
+          <img src="src/img/docs.png" alt="docs example" class="responsive">
+        </div>
+      </div>
+      <div class="spacer-div"></div>   
+      <div class="spacer-div__three-quaters"></div>
+      <div class="footer">
+        <div class="name-and-logo-container">
+          <img src="src/img/logo.png" alt="modbot logo" width="50" height="50">
+          <div style="height: 100%; width: 10px;"></div>
+          <h2>Modbot</h3>
+        </div>
+        <div class="button-container">
+          <div class="get-discord__container">
+            <div class="get-discord">
+              <a href="https://discord.com/" class="get-discord__button" target="_blank" rel="noopener noreferrer">
+                <h3 class="get-discord__h2">Discord</h3>
+              </a>
+            </div>
+          </div>
+          <div class="add-to-server__container">
+            <div class="add-to-server">
+              <a href="https://discord.com/api/oauth2/authorize?client_id=749635340330991687&permissions=8&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&scope=bot" class="add-to-server__button" target="_blank" rel="noopener noreferrer">
+                <h3 class="add-to-server__h2">Add Bot</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="snackbar">Please enable cookies in your browser</div>
+  </div>
+  <script>
+    function generateRandomString() {
+      const rand = Math.floor(Math.random() * 10);
+      let randStr = '';
+
+      for (let i = 0; i < 20 + rand; i++) {
+        randStr += String.fromCharCode(33 + Math.floor(Math.random() * 94));
+      }
+
+      return randStr;
+    }
+
+    // ...
+
+    // generate and store the string
+
+    function createSnackBar(){
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbar");
+
+      // Add the "show" class to DIV
+      x.className = "show";
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+    const randStr = generateRandomString();
+    localStorage.setItem('stateParameter', randStr);
+    
+    if (typeof Storage !== 'undefined') {
+      document.getElementById('login').href += `&state=${btoa(randStr)}`;
+    } else {
+      document.getElementById('login').classList.add("unclickable");
+      document.getElementById('login').onclick = createSnackBar;
+    }
+    
+  </script>
+</body>
+</html>

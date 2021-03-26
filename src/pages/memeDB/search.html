@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="src/img/favicon.png" />
+    
+    <link rel="stylesheet" href="../../u-src/u-css/u-nav.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-universal.css"/>
+    <link rel="stylesheet" href="src/css/loadingAnimation.css"/>
+    <link rel="stylesheet" href="src/css/search.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <title>memeDB Search</title>
+  </head>
+  <body>
+    <div class="grid">
+      <header>
+        <nav class="nav">
+          <a href="homepage.html" class="homeLink"><img src="src/img/Pepe-slick.png" alt="logo" width="54" height="54"/></a>
+          <a href="displayMeme.html" class="nav__link">Meme DB</a>
+          <a href="upload.html" class="nav__link">Upload</a>
+          <a href="search.html" class="nav__link">Search</a>
+        </nav>
+      </header>
+      <div class="aestheticDiv">
+      </div>
+      <div class="body">
+        <div id="searchMemes" class="instant-search">
+          <div class="instant-search__input-container">
+            <input id="searchBar" class="instant-search__input" type="text" spellcheck="false" placeholder="Search Memes">
+            <img class="material-icons instant-search__icon" src="src/img/search-icon.png" width="24px" height="24px">
+          </div>
+        </div>
+        <div id="errorDivContainer" class="error-div__container">
+        </div>
+
+        <div id="searchResults" class="search-results">
+          
+        </div>
+        <div id="loadingAnimationContainer" class="loading-animation__container">
+          
+        </div>
+      </div>
+    </div>
+    <script src="src/js/search.js"></script>
+  </body>
+</html>

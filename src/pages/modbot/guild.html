@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/mb-universal.css">
+  <link rel="stylesheet" href="src/css/guild.css">
+  <link rel="stylesheet" href="src/css/multi-instance classes/sliderbtn.css">
+  <link rel="stylesheet" href="src/css/multi-instance classes/accordian.css">
+  <link rel="stylesheet" href="src/css/dynamic pages css/dashboard.css">
+  <link rel="stylesheet" href="src/css/dynamic pages css/commands.css">
+  <link rel="stylesheet" href="src/css/dynamic pages css/docs.css">
+  <link rel="stylesheet" href="src/css/dynamic pages css/ccs.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guild Settings</title>
+</head>
+<body>
+  <header id="navbar" class="header sticky">
+    <a class="header__img-div" href="index.html">
+      <img src="src/img/logo.png" alt="logo" width="50" height="50">
+      <h3 class="name-div">Modbot</h3>
+    </a>
+    <div class="button-container">
+      <div class="get-discord__container">
+        <div class="get-discord">
+          <a href="./index.html" class="get-discord__button" target="_blank" rel="noopener noreferrer">
+            <h2 class="get-discord__h2">Servers</h2>
+          </a>
+        </div>
+      </div>
+      <div class="get-discord__container">
+        <div class="get-discord">
+          <a href="https://discord.com/" class="get-discord__button" target="_blank" rel="noopener noreferrer">
+            <h2 class="get-discord__h2">Discord</h2>
+          </a>
+        </div>
+      </div>
+      <div class="add-to-server__container">
+        <div class="add-to-server">
+          <a href="https://discord.com/api/oauth2/authorize?client_id=749635340330991687&permissions=8&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&scope=bot" class="add-to-server__button" target="_blank" rel="noopener noreferrer">
+            <h2 class="add-to-server__h2">Add Bot</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="guildLoaderContainerDiv" class="loader-container-div">
+    <div class="canvas-centerer">
+      <canvas id="gLoader" width="800" height="800"></canvas>
+    </div>
+  </div>
+  <div id="guildPageContainer" class="container">
+    <div class="content-container">
+      <div class="sidenav">
+        <div class="basic-info-div">
+          <img src="" alt="icon" id="iconImg" width="120" height="120">
+          <h2 class="guild-name" id="guildName"></h2>
+        </div>
+        <a id="dashboardATag" class="side-nav-a-tag">
+          <div class="side-nav-bar-content">
+            <h3 id="dashboardHeader" class="side-nav-bar-h3">Dashboard</h3>
+          </div>
+        </a>
+        <a id="commandsATag" class="side-nav-a-tag">
+          <div class="side-nav-bar-content">
+            <h3 id="commandsHeader" class="side-nav-bar-h3">Commands</h3>
+          </div>
+        </a>
+        <a id="customCommandsATag" class="side-nav-a-tag">
+          <div class="side-nav-bar-content">
+            <h3 id="customCommandsHeader" class="side-nav-bar-h3">Custom Commands</h3>
+          </div>
+        </a>
+        <a id="docATag" class="side-nav-a-tag">
+          <div class="side-nav-bar-content">
+            <h3 id="docHeader" class="side-nav-bar-h3">Docs</h3>
+          </div>
+        </a>
+      </div>
+      <div id="contentDiv" class="dynamic-content-container">
+        <div id="dashboardContainer">
+          <div class="guild-title">
+            <h1 id="dTitleH1" class="title-h1"></h1>
+            </div>
+            <br/>
+            <div class="guild-basic-info">
+              <div class="info-div"><h3 class="info-h3">Region: </h3><h3 id="regionH3" class="info-h3__content"></h3></div>
+              <div class="info-div"><h3 class="info-h3">Catagories: </h3><h3 id="numCat" class="info-h3__content"></h3></div>
+              <div class="info-div"><h3 class="info-h3">Text Channels: </h3><h3 id="numTCs" class="info-h3__content"></h3></div>
+              <div class="info-div"><h3 class="info-h3">Voice Channels: </h3><h3 id="numVCs" class="info-h3__content"></h3></div>
+              <div class="info-div"><h3 class="info-h3">Roles: </h3><h3 id="numRoles" class="info-h3__content"></h3></div>
+            </div>
+            <br/>
+            <br/>
+            <div class="dynamic-content-grid">
+              <div class="guild-bot-info">
+                <h2 class="guild-bot-info__h2">Bot Information</h2>
+                <div class="guild-bot-info__content-div">
+                  <div class="prefix-form-container">
+                    <h2 class="mini-h2">Prefix</h2>
+                    <form id="prefix" class="guild-bot-info__form">
+                      <textarea id="prefixField" class="bot-info__text-area" cols="20" rows="1" placeholder="Prefix"></textarea>
+                      <div class="div-btn">
+                        <div id="prefixSubmitBtn" class="btn">
+                          <a style="text-decoration: none;"><h3 class="change-btn">Change</h3></a>
+                        </div>
+                      </div>
+                    </form>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h2 class="mini-h2">Name</h2>
+                    <form id="nick" class="guild-bot-info__form">
+                      <textarea id="nickField" class="bot-info__text-area" cols="20" rows="1" placeholder="Modbot"></textarea>
+                      <div class="div-btn">
+                        <div id="nickSubmitBtn" class="btn">
+                          <a style="text-decoration: none;"><h3 class="change-btn">Change</h3></a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+        
+              <div class="general">
+                <h2 class="general__h2">General</h2>
+                <div class="general__content-div">
+                  <div class="reaction-roles-count">
+                    <div class="info-div"><h3 class="info-h3">Reaction Roles: </h3><h3 id="rrNum" class="info-h3__content"></h3></div>
+                  </div>
+        
+                  <div class="join-roles-count">
+                    <div class="info-div"><h3 class="info-h3">Join/Auto Roles: </h3><h3 id="jrNum" class="info-h3__content"></h3></div>
+                  </div>
+        
+                  <div class="custom-commands-count">
+                    <div class="info-div"><h3 class="info-h3">Custom Commands: </h3><h3 id="ccNum" class="info-h3__content"></h3></div>
+                  </div>
+                  <div class="admin-only-btn-container">
+                    <h3 class="info-h3">Admin only:</h3>
+                    <div class="admin-only-btn">
+                      <label class="switch">
+                        <input id="adminOnlyCheckbox" type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="cmdsContainer" style="visibility: hidden; display: none;">
+          <div class="command-title">
+            <h1 class="title-h1">Commands</h1>
+          </div>
+          <br/>
+          <div class="command-basic-info">
+            <div class="info-div"><h3 class="info-h3">Commands: </h3><h3 class="info-h3__content">14</h3></div>
+            <div class="info-div"><h3 class="info-h3">Enabled: </h3><h3 id="enabledCommands" class="info-h3__content"></h3></div>
+            <div class="info-div"><h3 class="info-h3">Disabled: </h3><h3 id="disabledCommands" class="info-h3__content"></h3></div>
+          </div>
+          <br/>
+          <br/>    
+          <div class="commands-container">
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Set Prefix</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="setPrefixCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">Used to set the bot's prefix. This is used as a, well, prefix for all the commands</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Command Help</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="cmdHelpCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">Used to provide help for questions about any commands.<br/> 
+                <span style="color: #e89c0e;">$help</span> lists all commands.<br/>
+                <Span style="color: #e89c0e;">$help <span style="color: #0ee8b2;">cmd</span></Span> provides more details on the specified command</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Bot Info</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="botInfoCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command provides information on the bot such as the purpose, creator and date created among other information.</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Server Info</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="serverInfoCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command provides information on the server such as the owner, date created, region and number of members among other information.</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">User Info</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="userInfoCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command provides information on the specified user such as the date joined, roles and nickname among other information.</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Ban Word</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="banWordCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to ban words that you don't want to allow people to use. Commonly this would be curse words, age, real name etc.</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Get Banned Words</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="getBannedWordsCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to view the list of banned words for the server.</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Remove Banned Word</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="removeBannedWordCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to unban a word. By default, this command can only be used by admins and users with the <span style="color: #A87BBC;font-style: italic;">MANAGE_SERVER</span> permission</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Ban User</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="banUserCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to ban a user, and it requires you to confirm that you wish to ban them. By default, this command can only be used by admins and users with the <span style="color: #A87BBC;font-style: italic;">BAN_MEMBERS</span> permission</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Kick User</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="kickUserCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to kick a user. By default, this command can only be used by admins and users with the <span style="color: #A87BBC;font-style: italic;">KICK_MEMBERS</span> permission</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Mute User</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="muteUserCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to mute a user for the specified amount of time.
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Reaction Roles</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="rrCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to create a reaction role. By default, this command can only be used by admins and users with the <span style="color: #A87BBC;font-style: italic;">MANAGE_SERVER</span> permission</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">OnJoin/Auto Roles</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="jrCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to create an OnJoin/Auto role. By default, this command can only be used by admins and users with the <span style="color: #A87BBC;font-style: italic;">MANAGE_SERVER</span> permission</p>
+            </div>
+            <div class="command-div">
+              <div class="cmd-btn-container">
+                <h3 class="cmd-info-h3">Remove OnJoin/Auto Role</h3>
+                <div class="cmd-btn">
+                  <label class="switch">
+                    <input id="removeJrCheckbox" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <h3 class="cmd-desc-h3">Description</h3>
+              <p class="cmd-pTag">This command is used to remove an OnJoin/Auto role. By default, this command can only be used by admins and users with the <span style="color: #A87BBC;font-style: italic;">MANAGE_SERVER</span> permission</p>
+            </div>
+          </div>
+        </div>
+        <div id="ccsContainer" style="visibility: hidden; display: none;">
+          <div class="command-title">
+            <h1 class="title-h1">Custom Commands</h1>
+          </div>
+          <br/>
+          <br/>
+          <div class="custom-commands-content">
+            <div class="cc-page__btn-container">
+              <div class="pull-up-create-cc-window-btn__container">
+                <div id="pullUpCreateCCWindow" class="pull-up-create-cc-window-btn">
+                  <h2 class="pull-up-create-cc-window-btn__h2">Create Command</h2>
+                </div>
+              </div>
+              <div class="docs-btn__container">
+                <div id="docsButton" class="docs-btn">
+                  <h2 class="docs-btn__h2">Docs</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <div class="custom-commands-table__container">
+            <div class="cc-catagory-row">
+              <div class="cc-name">
+                <h3>Command</h3>
+              </div>
+              <div style="height: 50.44px; width: 2px; background: #e89c0e;"></div>
+              <div class="cc-help">
+                <h3>Help Message</h3>
+              </div>
+              <div style="height: 50.44px; width: 2px; background: #e89c0e;"></div>
+              <div class="cc-edit">
+                <h3>Edit</h3>
+              </div>
+            </div>
+            <hr class="cc-spacer">
+            <br/>
+            <div id="existingCCContainer" class="existing-cc-container">
+
+            </div>
+          </div>
+          <div id="createCCModal" class="modal">
+
+            <!-- Create New CC Modal -->
+            <div class="modal-content">
+              <h2 class="add-cc-header">Add Custom Command</h2>
+              <form id="createCCForm" class="create-cc__form">
+                <h2>Command</h2>
+                <textarea id="ccName" class="cc-form__text-area" placeholder="Command" maxlength="48" required></textarea>
+                <br/>
+                <h2>Description(help info)</h2>
+                <textarea id="ccHelp" class="cc-form__text-area__help" placeholder="" maxlength="177" required></textarea>
+                <br/>
+                <h2>Response</h2>
+                <textarea id="ccResponse" class="cc-form__text-area__res" placeholder="" maxlength="354" required></textarea>
+                <br/>
+                <button id="variablesAccordian" type="button" class="accordian">Variables</button>
+                <div id="variablesAccordianContent" class="accordian-content">
+                  <p class="accordian-content__p-tag">
+                    <span style="color: #A87BBC;">{user}</span> - replaced with the sender's effective name<br/>
+                    <span style="color: #A87BBC;">{role} (put role name here)</span> - mentions the specified role<br/>
+                    <span style="color: #A87BBC;">{channel} (put channel name here)</span> - mentions the specified channel<br/> 
+                    <span style="color: #A87BBC;">{everyone}</span> - replaced with @everyone mention<br/>
+                    <span style="color: #A87BBC;">{here}</span> - replaced with @here mention<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{user.id}</span> - replaced with the sender's id<br/>
+                    <span style="color: #A87BBC;">{user.name}</span> - replaced with the sender's name<br/>
+                    <span style="color: #A87BBC;">{user.username}</span> - replaced with the sender's username<br/>
+                    <span style="color: #A87BBC;">{user.discriminator}</span> - replaced with the sender's discriminator<br/>
+                    <span style="color: #A87BBC;">{user.nick}</span> - replaced with the sender's nickname, or null if they dont have one<br/>
+                    <span style="color: #A87BBC;">{user.game}</span> - get the sender's activity<br/>
+                    <span style="color: #A87BBC;">{user.avatar}</span> - replaced with the sender's avatar as a url<br/>
+                    <span style="color: #A87BBC;">{user.mention}</span> - replaced with a mention of the sender<br/>
+                    <span style="color: #A87BBC;">{user.createdAt}</span> - replaced with the date the user created their account<br/>
+                    <span style="color: #A87BBC;">{user.joinedAt}</span> - replaced with the date the user joined this server<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{server.id}</span> - replaced with the server's id<br/>
+                    <span style="color: #A87BBC;">{server.name}</span> - replaced with the server's name<br/>
+                    <span style="color: #A87BBC;">{server.icon}</span> - replaced with the erver's icon as a url<br/>
+                    <span style="color: #A87BBC;">{server.memberCount}</span> - replaced with the server's member count<br/>
+                    <span style="color: #A87BBC;">{server.ownerID}</span> - replaced with the server owner's id<br/>
+                    <span style="color: #A87BBC;">{server.createdAt}</span> - replaced with the date the server was created<br/>
+                    <span style="color: #A87BBC;">{server.region}</span> - replaced with the server's region<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{channel.id}</span> - replaced with the channel's id<br/>
+                    <span style="color: #A87BBC;">{channel.name}</span> - replaced with the channel's name<br/>
+                    <span style="color: #A87BBC;">{channel.mention}</span> - replaced with a mention of the channel<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{time}</span> - replaced with the current time in 24 hours<br/>
+                    <span style="color: #A87BBC;">{time12}</span> - replaced with the current time in 12 hours<br/>
+                    <span style="color: #A87BBC;">{date}</span> - replaced with the current date<br/>
+                    <span style="color: #A87BBC;">{datetime}</span> - replaced with the current date and time in 24 hours<br/>
+                    <span style="color: #A87BBC;">{datetime12}</span> - replaced with the current date and time in 12 hours<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{prefix}</span> - replaced with the bot's current prefix<br/>
+                    <span style="color: #A87BBC;">{delete}</span> - deletes the message that triggered the command<br/>
+                    <span style="color: #A87BBC;">{silent}</span> - bot does not send response<br/>
+                    <span style="color: #A87BBC;">$N</span> - this indicates that the command needs a parameter, and is replaced with said parameter<br/>
+                    <span style="color: #A87BBC;">{require-role}:</span> - require senders to have a role. put role name after this with a space in between<br/>
+                    <span style="color: #A87BBC;">{require-channel}:</span> - require senders to use a specific channel. Put channel name after this with a space in between. This can only be used once per command.<br/>
+                    <span style="color: #A87BBC;">{not-role}:</span> - require senders to not have a role. put role name after this with a space in between<br/>
+                    <span style="color: #A87BBC;">{not-channel}:</span> - require senders to not use a specific channel. Put channel name after this with a space in between<br/>
+                    <span style="color: #A87BBC;">{dm}</span> - direct messages the sender the response<br/>
+                    <span style="color: #A87BBC;">{respond}:</span> - bot sends the response in a specific channel. Put channel name after this with a space in between. This can only be used once per command.<br/>
+                    <span style="color: #A87BBC;">{choose}:</span> - randomly chooses one of three words/numbers you specify after this, put a space in between. Can only be used once per command<br/>
+                    <span style="color: #A87BBC;">{choice}</span> - replaced with the choice, requires a <span style="color: #A87BBC;">{choose}:</span> to be specified previously<br/>
+                  </p>
+                </div>
+                <br/>
+                <br/>
+                <div class="bottom-form-btn-container">
+                  <div class="cc-create">
+                    <div class="create-cc-btn__container">
+                      <div id="createCCButton" class="create-cc-btn">
+                        <h2 class="create-cc-btn__h2">Create</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cc-create">
+                    <div class="create-cc-btn__container">
+                      <div id="cancelCreateCCButton" class="create-cc-btn">
+                        <h2 class="create-cc-btn__h2">Cancel</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+          <div id="editCCModal" class="modal">
+            
+            <!-- Edit Existing CC Modal -->
+            <div class="modal-content">
+              <h2 id="editCCHeader" class="add-cc-header" data-index-number="">Edit Custom Command</h2>
+              <form id="editCCForm" class="create-cc__form">
+                <h2>Command</h2>
+                <textarea id="editedCCName" class="cc-form__text-area" placeholder="Command" maxlength="48" required></textarea>
+                <br/>
+                <h2>Description(help info)</h2>
+                <textarea id="editedCCHelp" class="cc-form__text-area__help" placeholder="" maxlength="177" required></textarea>
+                <br/>
+                <h2>Response</h2>
+                <textarea id="editedCCResponse" class="cc-form__text-area__res" placeholder="" maxlength="354" required></textarea>
+                <br/>
+                <button id="variablesEditAccordian" type="button" class="accordian">Variables</button>
+                <div id="variablesEditAccordianContent" class="accordian-content">
+                  <p class="accordian-content__p-tag">
+                    <span style="color: #A87BBC;">{user}</span> - replaced with the sender's effective name<br/>
+                    <span style="color: #A87BBC;">{role} (put role name here)</span> - mentions the specified role<br/>
+                    <span style="color: #A87BBC;">{channel} (put channel name here)</span> - mentions the specified channel<br/> 
+                    <span style="color: #A87BBC;">{everyone}</span> - replaced with @everyone mention<br/>
+                    <span style="color: #A87BBC;">{here}</span> - replaced with @here mention<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{user.id}</span> - replaced with the sender's id<br/>
+                    <span style="color: #A87BBC;">{user.name}</span> - replaced with the sender's name<br/>
+                    <span style="color: #A87BBC;">{user.username}</span> - replaced with the sender's username<br/>
+                    <span style="color: #A87BBC;">{user.discriminator}</span> - replaced with the sender's discriminator<br/>
+                    <span style="color: #A87BBC;">{user.nick}</span> - replaced with the sender's nickname, or null if they dont have one<br/>
+                    <span style="color: #A87BBC;">{user.game}</span> - get the sender's activity<br/>
+                    <span style="color: #A87BBC;">{user.avatar}</span> - replaced with the sender's avatar as a url<br/>
+                    <span style="color: #A87BBC;">{user.mention}</span> - replaced with a mention of the sender<br/>
+                    <span style="color: #A87BBC;">{user.createdAt}</span> - replaced with the date the user created their account<br/>
+                    <span style="color: #A87BBC;">{user.joinedAt}</span> - replaced with the date the user joined this server<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{server.id}</span> - replaced with the server's id<br/>
+                    <span style="color: #A87BBC;">{server.name}</span> - replaced with the server's name<br/>
+                    <span style="color: #A87BBC;">{server.icon}</span> - replaced with the erver's icon as a url<br/>
+                    <span style="color: #A87BBC;">{server.memberCount}</span> - replaced with the server's member count<br/>
+                    <span style="color: #A87BBC;">{server.ownerID}</span> - replaced with the server owner's id<br/>
+                    <span style="color: #A87BBC;">{server.createdAt}</span> - replaced with the date the server was created<br/>
+                    <span style="color: #A87BBC;">{server.region}</span> - replaced with the server's region<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{channel.id}</span> - replaced with the channel's id<br/>
+                    <span style="color: #A87BBC;">{channel.name}</span> - replaced with the channel's name<br/>
+                    <span style="color: #A87BBC;">{channel.mention}</span> - replaced with a mention of the channel<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{time}</span> - replaced with the current time in 24 hours<br/>
+                    <span style="color: #A87BBC;">{time12}</span> - replaced with the current time in 12 hours<br/>
+                    <span style="color: #A87BBC;">{date}</span> - replaced with the current date<br/>
+                    <span style="color: #A87BBC;">{datetime}</span> - replaced with the current date and time in 24 hours<br/>
+                    <span style="color: #A87BBC;">{datetime12}</span> - replaced with the current date and time in 12 hours<br/>
+                    <br/>
+                    <span style="color: #A87BBC;">{prefix}</span> - replaced with the bot's current prefix<br/>
+                    <span style="color: #A87BBC;">{delete}</span> - deletes the message that triggered the command<br/>
+                    <span style="color: #A87BBC;">{silent}</span> - bot does not send response<br/>
+                    <span style="color: #A87BBC;">$N</span> - this indicates that the command needs a parameter, and is replaced with said parameter<br/>
+                    <span style="color: #A87BBC;">{require-role}:</span> - require senders to have a role. put role name after this with a space in between<br/>
+                    <span style="color: #A87BBC;">{require-channel}:</span> - require senders to use a specific channel. Put channel name after this with a space in between. This can only be used once per command.<br/>
+                    <span style="color: #A87BBC;">{not-role}:</span> - require senders to not have a role. put role name after this with a space in between<br/>
+                    <span style="color: #A87BBC;">{not-channel}:</span> - require senders to not use a specific channel. Put channel name after this with a space in between<br/>
+                    <span style="color: #A87BBC;">{dm}</span> - direct messages the sender the response<br/>
+                    <span style="color: #A87BBC;">{respond}:</span> - bot sends the response in a specific channel. Put channel name after this with a space in between. This can only be used once per command.<br/>
+                    <span style="color: #A87BBC;">{choose}:</span> - randomly chooses one of three words/numbers you specify after this, put a space in between. Can only be used once per command<br/>
+                    <span style="color: #A87BBC;">{choice}</span> - replaced with the choice, requires a <span style="color: #A87BBC;">{choose}:</span> to be specified previously<br/>
+                  </p>
+                </div>
+                <br/>
+                <br/>
+                <div class="bottom-form-btn-container">
+                  <div class="cc-create">
+                    <div class="create-cc-btn__container">
+                      <div id="confirmEditCCButton" class="create-cc-btn">
+                        <h2 class="create-cc-btn__h2">Confirm</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: row;">
+                    <div class="cc-create">
+                      <div class="create-cc-btn__container">
+                        <div id="deleteEditCCButton" class="create-cc-btn">
+                          <h2 class="create-cc-btn__h2">Delete</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cc-create">
+                      <div class="create-cc-btn__container">
+                        <div id="cancelEditCCButton" class="create-cc-btn">
+                          <h2 class="create-cc-btn__h2">Cancel</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="docContainer" style="visibility: hidden; display: none;">
+          <div class="command-title">
+            <h1 class="title-h1">Docs</h1>
+          </div>
+          <div class="entry-container">
+            <h2>User Variables</h2>
+            <div class="entry-container__sub-div">
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user}</span> is replaced with the sender's effective name. The user's effective name means their nickname(if they have one), otherwise it is their username.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Welcome <span style="color: #A87BBC;">{user}</span>!</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Welcome Modbot!</p>
+                  </div>
+                </div>
+              </div>
+
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.id}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.id}</span> is replaced with the sender's id. This isnt really useful to the average person, but you could do something fun like set everyone's nicknames to their id.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Your id is <span style="color: #A87BBC;">{user.id}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Your id is 1518910274738385</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.name}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.name}</span> is replaced with the sender's name. This is their full discord name, so username plus the discriminator(hastag and numbers after it).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Your name is <span style="color: #A87BBC;">{user.name}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Your name is Wumpus#9538</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.username}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.username}</span> is replaced with the sender's username. This is their full discord name, without the discriminator(hastag and numbers after it).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Your username is <span style="color: #A87BBC;">{user.username}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Your username is Wumpus</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.discriminator}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.discriminator}</span> is replaced with the sender's discriminator(hastag and numbers after it in your name).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Your discriminator is <span style="color: #A87BBC;">{user.discriminator}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Your discriminator is #9538</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.nick}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.nick}</span> is replaced with the sender's nickname in this server, if applicable, or their username.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Your name in this server is <span style="color: #A87BBC;">{user.nick}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Your name in this server is The Discord Mascot</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.game}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.game}</span> is replaced with the sender's current game activity.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>You are currently playing: <span style="color: #A87BBC;">{user.game}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>You are currently playing: Rocket League</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.avatar}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.avatar}</span> is replaced with a url of sender's avatar.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Your avatar is: <span style="color: #A87BBC;">{user.avatar}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Your avatar is: https://media.tenor.com/images/fa7ac0f660787f24e8a925dae120be7a/tenor.png</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.mention}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.mention}</span> is replaced with a mention of the sender.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>Welcome <span style="color: #A87BBC;">{user.mention}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>Welcome @Wumpus</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.createdAt}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.createdAt}</span> is replaced with the date the user created their account.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>You created your account on: <span style="color: #A87BBC;">{user.createdAt}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>You created your account on: May 13, 2015</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{user.joinedAt}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{user.joinedAt}</span> is replaced with the date the user joined this server.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>You joined this server on: <span style="color: #A87BBC;">{user.joinedAt}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>You joined this server on: January 20, 2018</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <br/>
+            <br/>
+
+            <h2>Server Variables</h2>
+            <div class="entry-container__sub-div">
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.id}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.id}</span> is replaced with the server's ID.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This server's ID is: <span style="color: #A87BBC;">{server.id}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This server's ID is: 2712061347339121</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.name}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.name}</span> is replaced with the name of this server.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>You you are in <span style="color: #A87BBC;">{server.name}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>You are in Discord Developers</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.icon}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.icon}</span> is replaced with a url of server's avatar.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This server's icon is: <span style="color: #A87BBC;">{server.icon}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This server's icon is: https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-discord.png?w=585&scale=down</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.memberCount}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.memberCount}</span> is replaced with the number of members in this server.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>There are <span style="color: #A87BBC;">{server.memberCount}</span> members in this server!</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>There are 19 members in this server!</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.ownerID}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.ownerID}</span> is replaced with the id of the owner of this server.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>The owner's id is <span style="color: #A87BBC;">{server.ownerID}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>The owner's id is 4899544129097338</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.createdAt}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.createdAt}</span> is replaced with the date the this server was created.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This sever was created on <span style="color: #A87BBC;">{server.createdAt}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This sever was created on May 15 2015</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{server.region}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{server.region}</span> is replaced with the region of this server.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This server is located in <span style="color: #A87BBC;">{server.region}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This server is located in USE</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+            <br/>
+
+            <h2>Channel Variables</h2>
+            <div class="entry-container__sub-div">
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{channel} (put channel name here)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{channel} (put channel name here)</span> is used, both words are replaced with a mention of the channel.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>If you have questions, please ask them in <span style="color: #A87BBC;">{channel} support</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>If you have questions, please ask them in @support</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{channel.id}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{channel.id}</span> is replaced with the id of the channel the command is used in.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This channel's id is <span style="color: #A87BBC;">{channel.id}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This channel's id is 3746043632070590</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{channel.name}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{channel.name}</span> is replaced with the name of the channel the command is used in.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This channel's name is <span style="color: #A87BBC;">{channel.name}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This channel's name is command-tester</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{channel.mention}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{channel.mention}</span> is replaced with the mention of the channel the command is used in.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>This is the <span style="color: #A87BBC;">{channel.mention}</span> channel!</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This is the @command-tester channel!</p>
+                  </div>
+                </div>
+              </div>  
+            </div>
+
+            <br/>
+            <br/>
+
+            <h2>Time and Date Variables</h2>
+            <div class="entry-container__sub-div">
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{time}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{time}</span> it is replaced with the time(24 hours).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>It is currently <span style="color: #A87BBC;">{time}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>It is currently 17:41</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{time12}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{time12}</span> it is replaced with the time(12 hours, or normal time).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>It is currently <span style="color: #A87BBC;">{time12}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>It is currently 5:41 PM</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{date}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{date}</span> is replaced with the local date.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>It is currently <span style="color: #A87BBC;">{date}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>It is currently November 02, 2020</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{datetime}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{datetime}</span> is replaced with the local date and time(24 hours).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>It is currently <span style="color: #A87BBC;">{datetime}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>It is currently November 02, 2020 13:50:43</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{datetime12}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{datetime12}</span> is replaced with the local date and time.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>It is currently <span style="color: #A87BBC;">{datetime12}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>It is currently November 02, 2020 01:50:43 pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+            <br/>
+
+            <h2>Miscellaneous Variables</h2>
+            <div class="entry-container__sub-div">
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{role} (put role name here)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{role} (put role name here)</span> is used, both words are replaced with a mention of the role(the role must have <span style="color: #A87BBC;">Anyone Can Mention</span> enabled).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{role} youtube</span>, there is a new youtube video out!</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>@Youtube, there is a new youtube video out!</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{everyone}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{everyone}</span> it is replaced with @everyone(pings everyone in the server).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{everyone}</span> happy holidays</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>@everyone happy holidays</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{here}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{here}</span> it is replaced with @here(pings everyone who is online).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{here}</span> happy holidays</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>@here happy holidays</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+            <br/>
+
+            <h2>Advanced Variables</h2>
+            <div class="entry-container__sub-div">
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{prefix}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{prefix}</span> is replaced with the bot's command prefix.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>The bot's current prefix is <span style="color: #A87BBC;">{prefix}</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>The bot's current prefix is $</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{delete}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{delete}</span> is removed and the discord message that triggered the command is deleted.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{delete}</span>I have deleted your command msg</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>I have deleted your command msg(the discord message you sent to trigger the response would be gone).</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{silent}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{silent}</span> is removed but bot does not respond.
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{silent}</span>, there is a new youtube video out!</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">$N</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">$N</span> is replaced with the first parameter you pass(it will throw an error if you do not pass enough parameters).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>The parameter you provided is <span style="color: #A87BBC;">$N</span></p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>The parameter you provided is testingThisCommand(the msg you would send to get this respons would be: !commandName testingThisCommand)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{require-role}: (role name)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{require-role}: (role name)</span> is used, both words are removed and the bot will only respond if the command is sent by a user with the specified role.(This can not be used with a role also used in a <span style="color: #A87BBC;">{not-role}:</span>)
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{require-role}: Admin</span>This is an Admin test command</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This is an Admin test command(message would only appear if the command was sent by someone with the Admin role)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{require-channel}: (channel name)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{require-channel}: (channel name)</span> is used, both words are removed and the bot will only respond if the command is sent in the specified channel.(This can only be used 1 time per command. Also, this can not be used with a channel also used in a <span style="color: #A87BBC;">{not-channel}:</span>)
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{require-channel}: bot-commands</span>This is a test command</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This is a test command(message would only appear if the command is sent in the bot-commands channel)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{not-role}: (role name)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{not-role}: (role name)</span> is used, both words are removed and the bot will not respond if the command is sent by a user with the the specified role.(this can not be used with a role also used in a <span style="color: #A87BBC;">{require-role}:</span>)
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{not-role}: unverified</span>This is a test command</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This is a test command(message would not appear if the command is sent by a user with the unverified role)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{not-channel}: (channel name)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{not-channel}: (channel name)</span> is used, both words are removed and the bot will not respond if the command is sent in the specified channel.(this can not be used with a channel also used in a <span style="color: #A87BBC;">{require-channel}:</span>)
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{not-channel}: bot-commands</span>This is a test command</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This is a test command(message would not appear if the command is sent in the bot-commands channel)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{dm}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{dm}</span> is removed and the bot's response is direct messaged to the sender.(this can not be used with <span style="color: #A87BBC;">{respond}:</span>)
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{dm}</span>What command would you like help with?</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>What command would you like help with?(message would appear in the sender's direct messages)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{respond}: (channel name)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When <span style="color: #A87BBC;">{respond}: (channel name)</span> is used, both words are removed and the bot's response is sent in the specified channel.(this can not be used with <span style="color: #A87BBC;">{dm}</span>)
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p><span style="color: #A87BBC;">{respond}: bot-commands</span>This is a test command</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>This is a test command(message would appear in the bot-commands channel)</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{choose}: (word/number) (word/number) (word/number)</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{choose}: (word/number) (word/number) (word/number)</span> will randomly choose one of the 3 items provided(note that, 1, you must provide 3 items, and 2, that unless you have a <span style="color: #A87BBC;">{choice}</span> later in the response, it will not do anything).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>{choose}: 1 2 3 I chose {choice}</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>I chose 3</p>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+
+              <div class="var-example-and-info-container">
+                <div class="variable-row-container">
+                  <h3><span style="color: #A87BBC;">{choice}</span></h3>
+                  <h3>Usage</h3>
+                </div>
+                <div class="entry-container__sub-div__info">
+                  <div class="detailed-description">
+                    When used, <span style="color: #A87BBC;">{choice}</span> is replaced with the choice from the 3 provided( it is random, and requires a <span style="color: #A87BBC;">{choose}:</span> to have been used before it).
+                  </div>
+                  <div class="docs-spacer"></div>
+                  <div class="variable-example">
+                    <h3>Custom Command:</h3>
+                    <p>{choose}: 1 2 3 I chose {choice}</p>
+                    <br/>
+                    <h3>Bot's Response:</h3>
+                    <p>I chose 2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/js/guild.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="src/img/favicon.ico" />
+    
+    <link rel="stylesheet" href="../../u-src/u-css/u-nav.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-universal.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-grid.css"/>
+    <link rel="stylesheet" href="../../u-src/u-css/u-footer.css"/>
+    <link rel="stylesheet" href="src/css/discord.css"/>
+    <title>inDev Developement</title>
+  </head>
+  <body ontouchstart>
+    <div class="grid">
+      <header>
+        <nav class="nav">
+          <a href="discord.html" class="homeLink"><img src="src/img/inDevBotLogo.png" alt="logo" width="125" height="94"/></a>
+          <a href="discordOverview.html" class="nav__link">Discord and Bots</a>
+          <a href="discord.html" class="nav__link">Official inDev Bot</a>
+        </nav>
+      </header>
+      <div class="aestheticDiv">
+      </div>
+      <div class="discordBody">
+        <div class="discordBody__text-field">
+          <div class="text-field__left">
+            <div class="overview">
+              <h2>The inDev Discord Bot</h2>
+              <p>I started working on the inDev Discord bot during the corona virus pandemic. 
+                It is useful, easy to use, and has an interesting sense of humor. 
+                While I dont recommend trying out bot developement if you are new to programming, 
+                if you have at least intermediate knowledge, bot developement is a great way to futher your understanding of whatever language or languages you choose.</p>
+            </div>
+
+            <div class="features">
+              <h2>Features</h2>
+              <div class="accordion">
+                <button type="button" class="accordion__button" id="accordion__button-music">MUSIC COMMANDS</button>
+                <div class="accordion__content">
+                  <ul>
+                    <li>Play</li>
+                    <li>Pause</li>
+                    <li>Stop</li>
+                    <li>Queue - view queue</li>
+                    <li>clear</li>
+                  </ul>
+                </div>
+
+                <button type="button" class="accordion__button" id="accordion__button-role">ROLE COMMANDS</button>
+                <div class="accordion__content">
+                  <ul>
+                    <li>Reaction Roles</li>
+                    <li>Add Nickname when given a role</li>
+                    <li>Add role when user joins</li>
+                  </ul>
+                </div>
+
+                <button type="button" class="accordion__button" id="accordion__button-meme">MEME COMMANDS</button>
+                <div class="accordion__content">
+                  <ul>
+                    <li>meme</li>
+                    <li>DBmeme</li>
+                    <li>add meme</li>
+                  </ul>
+                </div>
+
+                <button type="button" class="accordion__button" id="accordion__button-info">INFO COMMANDS</button>
+                <div class="accordion__content">
+                  <ul>
+                    <li>Bot info</li>
+                    <li>Server info</li>
+                    <li>User info</li>
+                  </ul>
+                </div>
+
+                <button type="button" class="accordion__button" id="accordion__button-mod">MOD COMMANDS</button>
+                <div class="accordion__content">
+                  <ul>
+                    <li>Mute</li>
+                    <li>Kick</li>
+                    <li>Ban</li>
+                    <li>Ban word</li>
+                    <li>clear messages</li>
+                    <li>set prefix</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-field__right">
+            <div class="bot-logo">
+              <img src="src/img/inDevBotLogo.png" alt="bot logo" width="460" height="345"/>
+            </div>
+          </div>
+        </div>
+        <div class="right-side">
+          
+          <button type="button" class="invButton" onclick="window.location.href='https://discordapp.com/api/oauth2/authorize?client_id=643451410855362569&permissions=8&scope=bot';">INVITE BOT</button>
+          <iframe src="https://discordapp.com/widget?id=718193978796671006&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.querySelectorAll(".accordion__button").forEach(button => {
+        button.addEventListener('click', () => {
+          const accordionContent = button.nextElementSibling;
+
+          button.classList.toggle('accordion__button--active');
+
+          if (button.classList.contains('accordion__button--active')) {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+          } else {
+            accordionContent.style.maxHeight = 0;
+          }
+        });
+      });
+      
+    </script>
+    <div class="footer">
+      <div class="footer-container">
+        <h3 class="footer-container__text">Developed using JDA</h3>
+        <h3 class="footer-container__text">Developer: Tormak</h3>
+      </div>
+    </div>
+    
+  </body>
+</html>
