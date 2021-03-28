@@ -6,22 +6,22 @@ let circleAnimationRunning = false;
 
 var p1_cavas = document.createElement("canvas");
 p1_cavas.id = "p1_canvas";
-p1_cavas.width = 800;
-p1_cavas.height = 800;
+p1_cavas.width = 600;
+p1_cavas.height = 600;
 p1_cavas.style = "position: absolute; background-color: transparent; z-index: 2;";
 document.getElementById("canvas-container").appendChild(p1_cavas);
 const p1_ctx = p1_cavas.getContext('2d');
 
 var p2_cavas = document.createElement("canvas");
 p2_cavas.id = "p2_canvas";
-p2_cavas.width = 800;
-p2_cavas.height = 800;
+p2_cavas.width = 600;
+p2_cavas.height = 600;
 p2_cavas.style = "position: absolute; background-color: transparent; z-index: 3;";
 document.getElementById("canvas-container").appendChild(p2_cavas);
 const p2_ctx = p1_cavas.getContext('2d');
 
-canvas.width = 800;
-canvas.height = 800;
+canvas.width = 600;
+canvas.height = 600;
 
 let ctrlsList = ["Escape", " ", "ArrowUp", "ArrowDown", "w", "s"];
 let btnIdList = ["pauseButton", "resetButton", "p2PaddleUpButton", "p2PaddleDownButton", "p1PaddleUpButton", "p1PaddleDownButton"];
@@ -32,10 +32,8 @@ let distance = Math.sqrt(point[0] * point[0] + point[1] * point[1]);
 
 let rotationInRadians = Math.round(Math.random() * 360) * Math.PI / 180;
 
-console.log(rotationInRadians);
 while (rotationInRadians < 0.52 || rotationInRadians > 5.76 || (rotationInRadians > 2.62 && rotationInRadians < 3.67)){
   rotationInRadians = Math.round(Math.random() * 360) * Math.PI / 180;
-  console.log("new val = " + rotationInRadians);
 }
 
 let transformedPoint = [
@@ -46,25 +44,25 @@ let transformedPoint = [
 const circle = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  size: 15,
+  size: 11.5,
   dx: transformedPoint[0],
   dy: transformedPoint[1]
 };
 
 const p1Paddle = {
   x: 20,
-  y: 300,
-  width: 20,
-  height: 200,
+  y: 225,
+  width: 15,
+  height: 150,
   speed: 8,
   dy: 0
 }
 
 const p2Paddle = {
-  x: 740,
-  y: 300,
-  width: 20,
-  height: 200,
+  x: 565,
+  y: 225,
+  width: 15,
+  height: 150,
   speed: 8,
   dy: 0
 }
@@ -185,7 +183,6 @@ function drawPaddle(ctx, x, y, width, height){
 
 
 function updateBallPos() {
-  console.log("updaterRan");
   if (!gameOver){
     if (!isPaused){
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -300,16 +297,16 @@ function update(){
     p2Paddle.y = 10;
   }
 
-  if (p2Paddle.y + p2Paddle.height > 790){
-    p2Paddle.y = 790 - p2Paddle.height;
+  if (p2Paddle.y + p2Paddle.height > 590){
+    p2Paddle.y = 590 - p2Paddle.height;
   }
 
   if (p1Paddle.y < 10){
     p1Paddle.y = 10;
   }
 
-  if (p1Paddle.y + p1Paddle.height > 790){
-    p1Paddle.y = 790 - p1Paddle.height;
+  if (p1Paddle.y + p1Paddle.height > 590){
+    p1Paddle.y = 590 - p1Paddle.height;
   }
 
   if(circleAnimationRunning){
@@ -343,20 +340,20 @@ function moveP2Down(){
 function startCountdown(str){
   if (str != null){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '96px Audiowide';
-    ctx.fillText(str, 321, 200, 150);
+    ctx.font = '72px Audiowide';
+    ctx.fillText(str, 240.75, 200, 150);
     setTimeout(function(){
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = '96px Audiowide';
-      ctx.fillText(3, 370, 200, 150);
+      ctx.font = '72px Audiowide';
+      ctx.fillText(3, 277.5, 200, 150);
       setTimeout(function () {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.font = '96px Audiowide';
-        ctx.fillText("2", 366, 200, 150);
+        ctx.font = '72px Audiowide';
+        ctx.fillText("2", 274.5, 200, 150);
         setTimeout(function () {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.font = '96px Audiowide';
-          ctx.fillText("1", 404, 200, 150);
+          ctx.font = '72px Audiowide';
+          ctx.fillText("1", 303, 200, 150);
           setTimeout(function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             circleAnimationRunning = true;

@@ -5,16 +5,16 @@ class Point{
   }
 
   draw(ctx){
-    roundRect(ctx, this.x, this.y, 40, 40, 10, true, true);
+    roundRect(ctx, this.x, this.y, 30, 30, 7.5, true, true);
   }
 
   drawHeld(ctx, id){
     if (id == 1 || id == 3 || id == 4){
-      roundRect(ctx, this.x - 80, this.y + 80, 40, 40, 10, true, true);
+      roundRect(ctx, this.x - 60, this.y + 60, 30, 30, 7.5, true, true);
     } else if (id == 5) {
-      roundRect(ctx, this.x - 100, this.y + 100, 40, 40, 10, true, true);
+      roundRect(ctx, this.x - 75, this.y + 75, 30, 30, 7.5, true, true);
     } else {
-      roundRect(ctx, this.x - 100, this.y + 80, 40, 40, 10, true, true);
+      roundRect(ctx, this.x - 75, this.y + 60, 30, 30, 7.5, true, true);
     }
   }
 

@@ -4,14 +4,14 @@ import Point from "./Point.js";
 const h_canvas = document.getElementById("holdingBoard");
 const h_ctx = h_canvas.getContext("2d");
 
-h_canvas.width = 200;
-h_canvas.height = 200;
+h_canvas.width = 150;
+h_canvas.height = 150;
 
 const canvas = document.getElementById("gameBoard");
 const ctx = canvas.getContext('2d');
 
-canvas.width = 400;
-canvas.height = 800;
+canvas.width = 300;
+canvas.height = 600;
 
 var v_canvas = createVCanvas(canvas.width, canvas.height);
 v_canvas.className = "vCanvas";
@@ -35,7 +35,7 @@ let level = 1;
 
 function update(context, run){
   if(!isPaused && !gameOver){
-    if(run % 40 == 0){
+    if(run % 30 == 0){
       if (isNotMoveAble()){
         hasLocked = true;
         currentT.draw(ctx);
@@ -128,13 +128,13 @@ function isNotMoveAble(){
   var p2 = currentT.p2;
   var p3 = currentT.p3;
   var p4 = currentT.p4;
-  if (p1.y / 40 + 1 == 20 || p2.y / 40 + 1 == 20 || p3.y / 40 + 1 == 20 || p4.y / 40 + 1 == 20){
+  if (p1.y / 30 + 1 == 20 || p2.y / 30 + 1 == 20 || p3.y / 30 + 1 == 20 || p4.y / 30 + 1 == 20){
     return true;
   } else {
-    if (boardMatrix[p1.y / 40 + 1][p1.x / 40] == 1 || 
-      boardMatrix[p2.y / 40 + 1][p2.x / 40] == 1 || 
-      boardMatrix[p3.y / 40 + 1][p3.x / 40] == 1 || 
-      boardMatrix[p4.y / 40 + 1][p4.x / 40] == 1){
+    if (boardMatrix[p1.y / 30 + 1][p1.x / 30] == 1 || 
+      boardMatrix[p2.y / 30 + 1][p2.x / 30] == 1 || 
+      boardMatrix[p3.y / 30 + 1][p3.x / 30] == 1 || 
+      boardMatrix[p4.y / 30 + 1][p4.x / 30] == 1){
       return true;
     }
   }
@@ -147,10 +147,10 @@ function mapTetronimoToMatrix(t){
   var p3 = t.p3;
   var p4 = t.p4;
 
-  boardMatrix[p1.y / 40][p1.x / 40] = 1;
-  boardMatrix[p2.y / 40][p2.x / 40] = 1; 
-  boardMatrix[p3.y / 40][p3.x / 40] = 1;
-  boardMatrix[p4.y / 40][p4.x / 40] = 1;
+  boardMatrix[p1.y / 30][p1.x / 30] = 1;
+  boardMatrix[p2.y / 30][p2.x / 30] = 1; 
+  boardMatrix[p3.y / 30][p3.x / 30] = 1;
+  boardMatrix[p4.y / 30][p4.x / 30] = 1;
 }
 
 function checkRows(){
@@ -161,10 +161,10 @@ function checkRows(){
 
     if (isFull){
       numRowsRemoved++;
-      ctx.clearRect(0, index * 40, 400, 40);
-      var aboveCleared = ctx.getImageData(0, 0, 400, index * 40);
-      ctx.clearRect(0, 0, 400, index * 40);
-      ctx.putImageData(aboveCleared, 0, 40);
+      ctx.clearRect(0, index * 30, 300, 30);
+      var aboveCleared = ctx.getImageData(0, 0, 300, index * 30);
+      ctx.clearRect(0, 0, 300, index * 30);
+      ctx.putImageData(aboveCleared, 0, 30);
       boardMatrix.splice(index, 1);
       boardMatrix.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
     }
@@ -189,10 +189,10 @@ function checkGameOver(t){
   var p3 = t.p3;
   var p4 = t.p4;
 
-  if (boardMatrix[p4.y / 40] == undefined || 
-    boardMatrix[p3.y / 40] == undefined || 
-    boardMatrix[p2.y / 40] == undefined || 
-    boardMatrix[p1.y / 40] == undefined){
+  if (boardMatrix[p4.y / 30] == undefined || 
+    boardMatrix[p3.y / 30] == undefined || 
+    boardMatrix[p2.y / 30] == undefined || 
+    boardMatrix[p1.y / 30] == undefined){
     gameOver = true;
   } else {
     gameOver = false;
@@ -226,13 +226,13 @@ async function setBoard(){
   }
 }
 function generateNextSevenPieces(){
-  var toReturn = [new Tetronimo(new Point(160, 0), new Point(160, -40), new Point(200, 0), new Point(120, 0), "#a903fc", "#b638f5", 1), //T
-  new Tetronimo(new Point(160, 0), new Point(120, 0), new Point(200, 0), new Point(240, 0), "#00a6ff", "#00ccff", 2), //I
-  new Tetronimo(new Point(160, 0), new Point(120, 0), new Point(200, 0), new Point(120, -40), "#002fff", "#2574cf", 3), //J
-  new Tetronimo(new Point(160, 0), new Point(120, 0), new Point(200, 0), new Point(200, -40), "#ff9500", "#e8ab1c", 4), //L
-  new Tetronimo(new Point(160, 0), new Point(200, 0), new Point(200, -40), new Point(160, -40), "#e6e61c", "yellow", 5), //O
-  new Tetronimo(new Point(160, 0), new Point(200, 0), new Point(200, -40), new Point(160, 40), "#781111", "#fa0505", 6), //S
-  new Tetronimo(new Point(160, 0), new Point(200, 0), new Point(200, 40), new Point(160, -40), "#127811", "#21e61e", 7)]; //Z
+  var toReturn = [new Tetronimo(new Point(120, 0), new Point(120, -30), new Point(150, 0), new Point(90, 0), "#a903fc", "#b638f5", 1), //T
+  new Tetronimo(new Point(120, 0), new Point(90, 0), new Point(150, 0), new Point(180, 0), "#00a6ff", "#00ccff", 2), //I
+  new Tetronimo(new Point(120, 0), new Point(90, 0), new Point(150, 0), new Point(90, -30), "#002fff", "#2574cf", 3), //J
+  new Tetronimo(new Point(120, 0), new Point(90, 0), new Point(150, 0), new Point(150, -30), "#ff9500", "#e8ab1c", 4), //L
+  new Tetronimo(new Point(120, 0), new Point(150, 0), new Point(150, -30), new Point(120, -30), "#e6e61c", "yellow", 5), //O
+  new Tetronimo(new Point(120, 0), new Point(150, 0), new Point(150, -30), new Point(120, 30), "#781111", "#fa0505", 6), //S
+  new Tetronimo(new Point(120, 0), new Point(150, 0), new Point(150, 30), new Point(120, -30), "#127811", "#21e61e", 7)]; //Z
   for (let i = toReturn.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [toReturn[i], toReturn[j]] = [toReturn[j], toReturn[i]];
@@ -373,7 +373,7 @@ function canMoveLeft(){
   var p2 = currentT.p2.x;
   var p3 = currentT.p3.x;
   var p4 = currentT.p4.x;
-  if (p1 / 40 == 0 || p2 / 40 == 0 || p3 / 40 == 0 || p4 / 40 == 0){
+  if (p1 / 30 == 0 || p2 / 30 == 0 || p3 / 30 == 0 || p4 / 30 == 0){
     return false;
   }
   return true;
@@ -383,7 +383,7 @@ function canMoveRight(){
   var p2 = currentT.p2.x;
   var p3 = currentT.p3.x;
   var p4 = currentT.p4.x;
-  if (p1 / 40 == 9 || p2 / 40 == 9 || p3 / 40 == 9 || p4 / 40 == 9){
+  if (p1 / 30 == 9 || p2 / 30 == 9 || p3 / 30 == 9 || p4 / 30 == 9){
     return false;
   }
   return true;
@@ -419,7 +419,7 @@ function canRotate(){
   var p2 = currentT.p2.x;
   var p3 = currentT.p3.x;
   var p4 = currentT.p4.x;
-  if (p1 / 40 == 0 || p2 / 40 == 0 || p3 / 40 == 0 || p4 / 40 == 0 || p1 / 40 == 9 || p2 / 40 == 9 || p3 / 40 == 9 || p4 / 40 == 9){
+  if (p1 / 30 == 0 || p2 / 30 == 0 || p3 / 30 == 0 || p4 / 30 == 0 || p1 / 30 == 9 || p2 / 30 == 9 || p3 / 30 == 9 || p4 / 30 == 9){
     return false;
   }
   return true;

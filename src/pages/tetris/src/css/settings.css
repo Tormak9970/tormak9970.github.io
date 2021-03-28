@@ -1,6 +1,7 @@
 .p1-up-button {
-  width: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 40px;
+  padding: 7.5px;
   color: white;
   background-color: transparent;
   border: 1px solid #e89c0e;
@@ -10,8 +11,9 @@
 }
 
 .p1-down-button {
-  width: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 40px;
+  padding: 7.5px;
   color: white;
   background-color: transparent;
   border: 1px solid #e89c0e;
@@ -21,8 +23,9 @@
 }
 
 .p2-up-button {
-  width: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 40px;
+  padding: 7.5px;
   color: white;
   background-color: transparent;
   border: 1px solid #e89c0e;
@@ -32,8 +35,9 @@
 }
 
 .p2-down-button {
-  width: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 40px;
+  padding: 7.5px;
   color: white;
   background-color: transparent;
   border: 1px solid #e89c0e;
@@ -43,8 +47,9 @@
 }
 
 .reset-button {
-  width: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 40px;
+  padding: 7.5px;
   color: white;
   background-color: transparent;
   border: 1px solid #e89c0e;
@@ -54,8 +59,9 @@
 }
 
 .pause-button {
-  width: 100px;
-  padding: 10px;
+  width: 55px;
+  height: 40px;
+  padding: 7.5px;
   color: white;
   background-color: transparent;
   border: 1px solid #e89c0e;
@@ -75,12 +81,12 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  height: 490px;
+  height: 367.5px;
 }
 
 .back-button {
-  width: 100px;
-  padding: 10px;
+  width: 80px;
+  padding: 7.5px;
   margin-bottom: 15px;
   color: white;
   background-color: transparent;
@@ -99,14 +105,20 @@
   position: fixed; /* Stay in place */
   overflow: auto; /* Enable scroll if needed */
   top: 100px;
-  width: 400px;
-  height: 600px;
+  width: 300px;
+  height: 450px;
   z-index: 4;
 }
 
 .settings-button-div {
-  width: 300px;
+  width: 225px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.setting-name {
+  color: white;
+  font-size: 16px;
+  padding: 0;
 }

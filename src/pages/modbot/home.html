@@ -9,6 +9,18 @@
   <link rel="stylesheet" href="src/css/snackbar.css">
   <link rel="shortcut icon" href="src/img/logo.png">
   <title>Modbot Landing</title>
+  <style>
+    .disabled {
+      pointer-events: none;
+    }
+    .disabled > div {
+      background-color: gray;
+    }
+    .disabled-btn {
+      pointer-events: none;
+      background-color: gray;
+    }
+  </style>
 </head>
 <body>
   <header id="navbar" class="header sticky">
@@ -24,7 +36,7 @@
     <a href="#docsATag" class="docs jump-a-tag">
       <h3 class="h3">Docs</h3>
     </a>
-    <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=749635340330991687&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&response_type=code&scope=identify%20email%20connections%20guilds" class="login-button">
+    <a id="login" href="https://discord.com/api/oauth2/authorize?client_id=749635340330991687&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Fsrc%2Fpages%2Fmodbot%2Floadguilds.html&response_type=code&scope=guilds%20identify%20messages.read" class="disabled login-button">
       <div class="login-button__div">
         <h3 class="login-button__h3">Login</h3>
       </div>
@@ -93,15 +105,13 @@
       <div class="docs-container">
         <div class="docs-div">
           <a id="docsATag">
-            <h1 class="docs-header info-header">Analytics</h1>
+            <h1 class="docs-header info-header">Docs</h1>
           </a>
           <p>The docs explain a little bit more about custom commands. They also have example commands, and explain the usages of each variable more in-depth.
           </p>
         </div>
         <div class="v-spacer-div"></div>
         <div class="docs-ex">
-          <h1 class="docs-header info-header">Example:</h1>
-          <img src="src/img/docs.png" alt="docs example" class="responsive">
         </div>
       </div>
       <div class="spacer-div"></div>   
@@ -121,7 +131,7 @@
             </div>
           </div>
           <div class="add-to-server__container">
-            <div class="add-to-server">
+            <div class="disabled-btn add-to-server">
               <a href="https://discord.com/api/oauth2/authorize?client_id=749635340330991687&permissions=8&redirect_uri=http%3A%2F%2F127.0.0.1%3A5500%2Findex.html&scope=bot" class="add-to-server__button" target="_blank" rel="noopener noreferrer">
                 <h3 class="add-to-server__h2">Add Bot</h3>
               </a>
@@ -144,18 +154,11 @@
       return randStr;
     }
 
-    // ...
-
-    // generate and store the string
-
     function createSnackBar(){
-      // Get the snackbar DIV
       var x = document.getElementById("snackbar");
 
-      // Add the "show" class to DIV
       x.className = "show";
 
-      // After 3 seconds, remove the show class from DIV
       setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
 

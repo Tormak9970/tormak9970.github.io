@@ -10,8 +10,8 @@ class Tetronimo {
     this.origin2 = new Point(p2.x, p2.y); 
     this.origin3 = new Point(p3.x, p3.y); 
     this.origin4 = new Point(p4.x, p4.y); 
-    this.dx = 40;
-    this.dy = 40;
+    this.dx = 30;
+    this.dy = 30;
     this. sColor = sColor;
     this.fColor = fColor;
     this.hasBeenHeld = false;

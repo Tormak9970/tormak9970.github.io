@@ -13,15 +13,13 @@ html, body {
   justify-content: center;
   align-content: center;
 }
-
 .game-container {
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 45px 1fr;
 }
-
 .header {
-  height: 60px;
-  width: 800px;
+  height: 45px;
+  width: 600px;
   background: #e89c0e;
   display: flex;
   column-gap: 7em;
@@ -36,20 +34,16 @@ html, body {
   align-items: center;
   justify-content: center;
 }
-
 .title-header {
   color: white;
   font-family: 'Audiowide', cursive;
 }
-
 .p1-score-container {
   font-family: 'Audiowide', cursive;
 }
-
 .p2-score-container {
   font-family: 'Audiowide', cursive;
 }
-
 .sak-div {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -58,7 +52,6 @@ html, body {
   top: 300px;
   z-index: 4;
 }
-
 .sak-div-content {
   left: 38%;
   background-color: transparent;
@@ -71,7 +64,6 @@ html, body {
   align-items: center;
   border-radius: 10px;
 }
-
 .sak-header {
   color: rgb(133, 131, 131);
 }
