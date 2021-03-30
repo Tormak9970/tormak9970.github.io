@@ -6,7 +6,8 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="" />
-    <link rel="stylesheet" href="src/css/index.css"/>
+    <link rel="stylesheet" href="src/css/index.css" media="(orientation: landscape)"/>
+    <link rel="stylesheet" href="src/css/mobile.css" media="(orientation: portrait)"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://kit.fontawesome.com/3d360bd07a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
@@ -16,11 +17,49 @@
     <div class="header-container">
       <div class="header">
         <div class="projects-link__container">
-          <a href="./" class="no-style home-link">Home</a>
+          <a href="./" class="no-style home-link">Home</a> <!--possibly change to "Travis Lane"-->
+        </div>
+        <div class="dk-hide mobile-menu-container">
+          <div id="mobileMenu" class="m-m-c__icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
         </div>
       </div>
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
+      <div class="mobile-menu-contents">
+        <div id="mobileMenuList" class="mm-content-container mb-hide dk-hide">
+          <div class="m-m-dropdown">
+            <div class="m-m-dropdown-label">
+              <h3 class="m-m-h3">Projects</h3>
+              <button id="projectDDBtn" class="dropbtn">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div id="projectDDCont" class="m-m-dropdown-content">
+              <div id="projectDDContWrapper" class="inner-wrapper" style="display: none;">
+                <button id="wdDDBtn" class="dropbtn dct">Web Developement</button>
+                <button id="backDDBtn" class="dropbtn dct">Backend</button>
+                <button id="fsDDBtn" class="dropbtn dct">Full Stack</button>
+                <button id="otherDDBtn" class="dropbtn dct">Other</button>
+              </div>
+            </div>
+          </div>
+          <div class="m-m-dropdown">
+            <div class="m-m-dropdown-label">
+              <h3 class="m-m-h3">Organization</h3>
+              <button id="orgsDDBtn" class="dropbtn">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+            <div id="orgsDDCont" class="m-m-dropdown-content">
+              <div id="orgsDDContWrapper" class="inner-wrapper" style="display: none;">
+                <button id="torcDDBtn" class="dropbtn dct">TORC</button>
+                <button id="slicersDDBtn" class="dropbtn dct">Slicers</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="icon-bar">
@@ -28,13 +67,13 @@
     </div>
     <div class="main-container">
       <div class="spacer-container">
-        <img src="src/img/cpp.png" alt="" class="lang-img">
+        <img src="src/img/cpp.png" alt="" class="lang-img mb-hide">
         <img src="src/img/Python.png" alt="" class="lang-img">
-        <img src="src/img/java.png" alt="" class="lang-img">
+        <img src="src/img/java.png" alt="" class="lang-img special-case">
         <img src="src/img/javascript.png" alt="" class="lang-img">
-        <img src="src/img/html.png" alt="" class="lang-img">
-        <img src="src/img/css.png" alt="" class="lang-img">
-        <img src="src/img/php.png" alt="" class="lang-img">
+        <img src="src/img/html.png" alt="" class="lang-img mb-hide">
+        <img src="src/img/css.png" alt="" class="lang-img mb-hide">
+        <img src="src/img/php.png" alt="" class="lang-img mb-hide">
       </div>
       <div class="main-container__body">
         <div class="sidebar-container">
@@ -48,7 +87,7 @@
           <h3 class="project-header">Organizations</h3>
           <div class="project-btns-container">
             <a id="torc" class="project-btn">TORC</a>
-            <a id="extractors" class="project-btn">Extractors</a>
+            <a id="slicers" class="project-btn">Slicers</a>
           </div>
         </div>
         <div class="main-container__body__main">
@@ -74,8 +113,13 @@
             <div class="content-container-skill">
               <h1 class="content-container__header">Skills</h1>
               <div class="content-container__subskill">
-                <div class="content-container__subskill-container">
-                  <h2 class="content-container__header">Languages</h2>
+                <div id="skillFront" class="content-container__subskill-container">
+                  <div class="content-container__header__skill">
+                    <h2 class="content-container__header lang">Languages</h2>
+                    <span id="toBack" class="to-back">
+                      <i class="fas fa-angle-double-right pulsate dk-hide"></i>
+                    </span>
+                  </div>
                   <div class="content-container__subskill-container__content">
     
                     <p class="skill-header">HTML</p>
@@ -129,8 +173,13 @@
                   </div>
                 </div>
 
-                <div class="content-container__subskill-container">
-                  <h2 class="content-container__header">Frameworks + APIs</h2>
+                <div id="skillBack" class="mb-hide content-container__subskill-container">
+                  <div class="content-container__header__skill">
+                    <span id="toFront" class="to-front">
+                      <i class="fas fa-angle-double-left pulsate dk-hide"></i>
+                    </span>
+                    <h2 class="content-container__header fwai">Frameworks + APIs</h2>
+                  </div>
                   <div class="content-container__subskill-container__content">
   
                     <p class="skill-header">JDA</p>
@@ -184,12 +233,12 @@
               <div class="featured-project-card__container">
                 <div class="featured-project-card">
                   <h3 class="content-container__header" style="text-align: center;">SWTOR Character and Outfit Designer</h3>
-                  <img src="/src/img/Release_one.png" alt="Release One" width="270px">
+                  <img src="/src/img/Release_one.png" alt="Release One" class="featured-proj-img">
                   <p style="width: 100%; padding-left: 20px; line-height: 24px;">
                     <b>Complexity:</b> High <br>
-                    <b>Length:</b> 270+ hours <br>
+                    <b>Length:</b> 300+ hours <br>
                     <b>Status:</b> Beta <br>
-                    <b>Organizations:</b> TORC/Extractors
+                    <b>Organizations:</b> TORC/Slicers
                   </p>
                 </div>
               </div>
@@ -198,9 +247,8 @@
         </div>
       </div>
 
-      <!-- will have the slide in containers here -->
       <div id="projectCatsOverlay" class="content-category-slide-in">
-        <span id="openAndCloseSpan__cats" class="content-category-slide-in__span">&#xab;</span>
+        <span id="openAndCloseSpan__cats" class="content-category-slide-in__span"><i class="fas fa-angle-double-left"></i></span>
         <div id="wdOverlay" class="project__cats__overlay" style="display: none;">
           <h1 class="h1-no-style">Web Developement</h1>
           <div class="project__cats__overlay__organizer">
@@ -273,9 +321,9 @@
                   <img src="./src/img/Release_one.png" alt="project-image" height="180px">
                   <p class="project-card-front__info">
                     <b>Complexity:</b> High <br>
-                    <b>Length:</b> Ongoing <br>
+                    <b>Length:</b> Ongoing (300+ hours) <br>
                     <b>Status:</b> Beta <br>
-                    <b>Organizations:</b> Torc, Extractors <br>
+                    <b>Organizations:</b> Torc, Slicers <br>
                     <b>Collaborative:</b> yes
                   </p>
                 </div>
@@ -660,14 +708,13 @@
           </div>
         </div>
         
-        <div id="extractorsOverlay" class="project__cats__overlay" style="display: none;">
-          <h1 class="h1-no-style">Organizations: SWTOR Extractors <a href="https://github.com/SWTOR-Extractors-Modders-Dataminers" target="_blank" rel="noreferrer noopener"><i class="fas fa-external-link-alt proj-link"></i></a></h1>
+        <div id="slicersOverlay" class="project__cats__overlay" style="display: none;">
+          <h1 class="h1-no-style">Organizations: SWTOR Slicers <a href="https://github.com/SWTOR-Slicers" target="_blank" rel="noreferrer noopener"><i class="fas fa-external-link-alt proj-link"></i></a></h1>
           <div class="organization-container-layout">
             <div class="organization-container-layout__info">
               <h2 class="h1-no-style">About</h2>
               <div>
-                The SWTOR Extractors, Modders, and Dataminers (or SWTOR Extractors 
-                for short) Collaboration is a group who enjoys taking Star Wars The Old Republic 
+                The SWTOR Slicers Collaboration is a group who enjoys taking Star Wars The Old Republic 
                 beyond the game. Whether this be through using models for fan films, 
                 or creating tools for the community (such as my <i>Character and Outfit 
                 Designer</i>), the community enjoys finding new and unique was 
@@ -688,13 +735,13 @@
             </div>
             <div class="organization-container-layout__logo">
               <img src="./src/img/SWTORServerLogo.png" alt="torc-logo" height="460" style="padding: 20px;">
-              <h1 style="font-size: 23px;">SWTOR Extractors, Modders, and Dataminers</h1>
+              <h1 style="font-size: 30px;">SWTOR Slicers</h1>
             </div>
           </div>
         </div>
       </div>
       <div id="projectOverlay" class="project-slide-in">
-        <span id="openAndCloseSpan__proj" class="project-slide-in__span">&#xab;</span>
+        <span id="openAndCloseSpan__proj" class="project-slide-in__span"><i class="fas fa-angle-double-left"></i></span>
         <div id="cdProjPage" class="project__overlay" style="display: none;">
           <h1 class="h1-no-style">SWTOR Character and Outfit Designer <a href="https://torcommunity.com/tools/character-designer" target="_blank" rel="noreferrer noopener"><i class="fas fa-external-link-alt proj-link"></i></a></h1>
           <div class="proj-page-main">
@@ -755,6 +802,7 @@
                 <div class="release">
                   <h2 class="h1-no-style">Release two (March 25, 2021)</h2>
                   <img src="./src/img/Release2.png" alt="" height="500px">
+                  <h3 class="h1-no-style">Length: ~300 hours</h3>
                   <h3 class="h1-no-style">Bug Fixes</h3>
                   <ul class="p-p-main__p-tag">
                     <li>Fixed many broken items (only a few left still needing to be fixed)</li>
@@ -781,6 +829,7 @@
                 <div class="release">
                   <h2 class="h1-no-style">Release one (March 14, 2021)</h2>
                   <img src="./src/img/Release_one.png" alt="" height="500px">
+                  <h3 class="h1-no-style">Length: 270+ hours</h3>
                   <h3 class="h1-no-style">New Features</h3>
                   <ul class="p-p-main__p-tag">
                     <li>Users can download a <i>.zip</i> with all the nessesary info to re-create their character in blender</li>
@@ -1094,206 +1143,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-      let poOpen = false;
-      let po = document.getElementById("projectOverlay");
-      let oAC = document.getElementById("openAndCloseSpan__proj");
-
-      let pwProjLink = document.getElementById("pwProjLink");
-      let pwProjPage = document.getElementById("pwProjPage");
-
-      let torcProjLink = document.getElementById("torcProjLink");
-
-      let cdProjLink = document.getElementById("cdProjLink");
-      let cdProjPage = document.getElementById("cdProjPage");
-
-      let mbUIProjLink = document.getElementById("mbUIProjLink");
-      let mbBackProjLink = document.getElementById("mbBackProjLink");
-      let mbDiscBotProjLink = document.getElementById("mbDiscBotProjLink");
-      let fsModbotProjLink = document.getElementById("fsModbotProjLink");
-      let mbProjPage = document.getElementById("mbProjPage");
-
-      let mDBUIProjLink = document.getElementById("mDBUIProjLink");
-      let mDBBackProjLink = document.getElementById("mDBBackProjLink");
-      let fsMemeDBProjLink = document.getElementById("fsMemeDBProjLink");
-      let memedbProjPage = document.getElementById("memedbProjPage");
-
-      let msVersionCheckbox = document.getElementById("msVersionCheckbox");
-      let msNormal = document.getElementById("msNormal");
-      let msAnimated = document.getElementById("msAnimated");
-
-      let ogMSProjLink = document.getElementById("ogMSProjLink");
-      let aMSProjLink = document.getElementById("aMSProjLink");
-      let msProjPage = document.getElementById("msProjPage");
-
-      let pongProjLink = document.getElementById("pongProjLink");
-      let pongProjPage = document.getElementById("pongProjPage");
-
-      let tetProjLink = document.getElementById("tetProjLink");
-      let tetProjPage = document.getElementById("tetProjPage");
-
-      let projLinks = [
-        pwProjLink,
-        cdProjLink,
-        [
-          mbUIProjLink,
-          mbBackProjLink,
-          mbDiscBotProjLink,
-          fsModbotProjLink
-        ],
-        [
-          mDBUIProjLink,
-          mDBBackProjLink,
-          fsMemeDBProjLink
-        ],
-        [
-          ogMSProjLink,
-          aMSProjLink
-        ],
-        pongProjLink,
-        tetProjLink
-      ];
-
-      let projPages = [
-        pwProjPage,
-        cdProjPage,
-        mbProjPage,
-        memedbProjPage,
-        msProjPage,
-        pongProjPage,
-        tetProjPage
-      ];
-
-      oAC.addEventListener("click", () => {
-        if (po.style.width == 0 || po.style.width == "0px") {
-          if (oApClosed) {
-            oAp.click();
-            displayFeaturedProj();
-          }
-          po.style.width = "calc(100% - 162px)";
-          oAC.innerHTML = '&#xbb;';
-          poOpen = true;
-        } else {
-          po.style.width = 0;
-          oAC.innerHTML = '&#xab;';
-          resetProjectElems();
-          poOpen = false;
-        }
-      });
-
-      torcProjLink.addEventListener("click", () => {
-        torcBtn.click();
-      });
-
-      msVersionCheckbox.addEventListener("change", () => {
-        if (msVersionCheckbox.checked) {
-          msNormal.style.display = "none";
-          msAnimated.style.display = "";
-        } else {
-          msAnimated.style.display = "none";
-          msNormal.style.display = "";
-        }
-      });
-
-      for (let i = 0; i < projLinks.length; i++) {
-        let projLink = projLinks[i];
-        let projPage = projPages[i];
-
-        if (Array.isArray(projLink)) {
-          projLink.forEach((link) => {
-            link.addEventListener("click", () => {
-              resetProjectElems();
-              showPage(projPage);
-              oAC.click();
-            });
-          });
-        } else {
-          projLink.addEventListener("click", () => {
-            resetProjectElems();
-            showPage(projPage);
-            oAC.click();
-          });
-        }
-      }
-
-    function displayFeaturedProj() {
-      showPage(cdProjPage);
-    }
-
-    function resetProjectElems() {
-      projPages.forEach((page) => {
-        page.style.display = "none";
-      })
-    }
-    function showPage(page) {
-      page.style.display = "";
-    }
-
-    </script>
-    <script type="text/javascript">
-      let oApClosed = true;
-      let wdBtn = document.getElementById("wd");
-      let backendBtn = document.getElementById("backend");
-      let fsBtn = document.getElementById("fs");
-      let otherBtn = document.getElementById("other");
-      let torcBtn = document.getElementById("torc");
-      let extractorsBtn = document.getElementById("extractors");
-      
-      let wdOverlay = document.getElementById("wdOverlay");
-      let backendOverlay = document.getElementById("backendOverlay");
-      let fsOverlay = document.getElementById("fsOverlay");
-      let otherOverlay = document.getElementById("otherOverlay");
-      let torcOverlay = document.getElementById("torcOverlay");
-      let extractorsOverlay = document.getElementById("extractorsOverlay");
-
-      let projectCatsOverlay = document.getElementById("projectCatsOverlay");
-      let oAp = document.getElementById("openAndCloseSpan__cats");
-
-      let projectCatsBtnList = [wdBtn, backendBtn, fsBtn, otherBtn, torcBtn, extractorsBtn];
-      let projectCatsOverlayList = [wdOverlay, backendOverlay, fsOverlay, otherOverlay, torcOverlay, extractorsOverlay];
-
-
-      for (let i = 0; i < projectCatsBtnList.length; i++) {
-        let pb = projectCatsBtnList[i];
-        let po = projectCatsOverlayList[i];
-
-        pb.addEventListener("click", () => {
-          resetElems();
-          pb.classList.add("project-btn__displaying");
-          if (projectCatsOverlay.style.width != "calc(100% - 162px)") {
-            projectCatsOverlay.style.width = "calc(100% - 162px)";
-            oAp.innerHTML = '&#xbb;';
-          }
-          po.style.display = "flex";
-        });
-      }
-
-      function resetElems() {
-        projectCatsOverlayList.forEach((po) => {
-          po.style.display = "none";
-        });
-        projectCatsBtnList.forEach((pb) => {
-          pb.classList.remove("project-btn__displaying");
-        })
-      }
-
-      oAp.addEventListener("click", () => {
-        if (projectCatsOverlay.style.width == 0 || projectCatsOverlay.style.width == "0px") {
-          projectCatsOverlay.style.width = "calc(100% - 162px)";
-          oAp.innerHTML = '&#xbb;';
-          wdBtn.classList.add("project-btn__displaying");
-          wdOverlay.style.display = "flex";
-          oApClosed = false;
-        } else {
-          if (poOpen) {
-            oAC.click();
-          }
-          projectCatsOverlay.style.width = 0;
-          oAp.innerHTML = '&#xab;';
-          resetElems();
-          oApClosed = true;
-        }
-      });
-    </script>
+    <script src="./src/js/index.js"></script>
   </body>
 </html>

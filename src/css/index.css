@@ -161,10 +161,10 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     background-color: var(--dark-onyx);
-    max-height: 539.48px;
+    height: calc(100% - 300px);
 }
 .spacer-container {
-    height: 325px;
+    height: 300px;
     width: 100%;
     background-color: var(--onyx);
     display: flex;
@@ -185,6 +185,7 @@ body {
 .page-content {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -257,21 +258,6 @@ body {
     text-align: right;
 }
 
-.js {width: 98%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
-.java {width: 88%; background-color: var(--bud-green);/*rgb(255, 145, 0);*/}
-.py {width: 30%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
-.html {width: 100%; background-color: var(--bud-green);/*rgb(255, 38, 0);*/}
-.css {width: 94%; background-color: var(--bud-green);/*rgb(0, 162, 255);*/}
-.php {width: 35%; background-color: var(--bud-green);/*rgb(153, 0, 255);*/}
-.cpp {width: 25%; background-color: var(--bud-green);/*rgb(0, 255, 34);*/}
-
-.sb {width: 40%; background-color: var(--bud-green);/*rgb(9, 167, 9);*/}
-.jfx {width: 68%; background-color: var(--bud-green);/*rgb(255, 145, 0);*/}
-.react {width: 10%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
-.three {width: 87%; background-color: var(--bud-green);/*rgb(255, 255, 0);*/}
-.jda {width: 92%; background-color: var(--bud-green);/*rgb(255, 145, 0);*/}
-.da {width: 52%; background-color: var(--bud-green);/*rgb(107, 55, 167);*/}
-
 .skill-container .skill-tooltip {
     visibility: hidden;
     width: 100px;
@@ -322,6 +308,21 @@ body {
     align-items: center;
 }
 
+.js {width: 98%; background-color: var(--bud-green);}
+.java {width: 88%; background-color: var(--bud-green);}
+.py {width: 30%; background-color: var(--bud-green);}
+.html {width: 100%; background-color: var(--bud-green);}
+.css {width: 94%; background-color: var(--bud-green);}
+.php {width: 35%; background-color: var(--bud-green);}
+.cpp {width: 25%; background-color: var(--bud-green);}
+
+.sb {width: 40%; background-color: var(--bud-green);}
+.jfx {width: 68%; background-color: var(--bud-green);}
+.react {width: 10%; background-color: var(--bud-green);}
+.three {width: 87%; background-color: var(--bud-green);}
+.jda {width: 92%; background-color: var(--bud-green);}
+.da {width: 52%; background-color: var(--bud-green);}
+
 .content-category-slide-in {
     display: inline-block;
     width: 0px;
@@ -335,9 +336,9 @@ body {
 }
 .content-category-slide-in__span{
     background-color: var(--bud-green);
-    left: -40px;
+    left: -38px;
     top: 40px;
-    padding: 20px 15px;
+    padding: 20px 12px;
     position: absolute;
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
@@ -438,9 +439,9 @@ body {
 }
 .project-slide-in__span{
     background-color: var(--bud-green);
-    left: -40px;
+    left: -38px;
     top: 105px;
-    padding: 20px 15px;
+    padding: 20px 12px;
     position: absolute;
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
@@ -619,4 +620,11 @@ input:checked + .slider:before {
     margin: 0px 40px;
     width: calc(100% - 80px);
     line-height: 24px;
+}
+
+.dk-hide {
+    display: none !important;
+}
+.featured-proj-img {
+    width: 85%;
 }
