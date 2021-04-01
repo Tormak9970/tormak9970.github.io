@@ -1,35 +1,23 @@
 html, body {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background: transparent;
+  padding: 0;
+  margin: 0;
+  background: transparent;
 }
-
 .page-centerer {
-    height: 100%;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    justify-content: center;
-    align-content: center;
+  /* overflow: hidden; */
 }
-
 .game-container {
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: min(13.333vw, 60px) 1fr;
 }
-
 .flags-left {
-  width: 30px;
-  height: 30px;
+  width: 50%;
+  height: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 .header {
-  height: 60px;
   background: #e89c0e;
   display: flex;
   column-gap: 7em;
@@ -37,98 +25,17 @@ html, body {
   align-items: center;
   justify-content: flex-start;
 }
-
 .flag {
 
-}
-
-.flag__img {
-  display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.mine__img {
-  display: block;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.vaild:hover {
-  background: rgb(126, 119, 119) !important;
-}
-
-.valid {
-}
-
-.checked {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Baloo Tamma 2', cursive;
-}
-
-.light-tan {
-  background: tan !important;
-}
-
-.dark-tan {
-  background: #998263 !important;
 }
 
 .mine {
   /*background: orange !important;*/
 }
 
-.light-grey {
-  background: rgb(73, 70, 70);
-}
-
-.dark-grey {
-  background: rgb(49, 47, 47);
-}
-
 .canvas-container {
   position: relative;
 }
-
-.game-board-difficult {
-  grid-template-columns: repeat(24, 25px);
-  background: rgb(49, 47, 47);
-  display: grid;
-  row-gap: 0em;
-}
-.game-board-difficult > div{
-  height: 25px;
-}
-
-.game-board-medium {
-  grid-template-columns: repeat(18, 30px);
-  background: rgb(49, 47, 47);
-  display: grid;
-  row-gap: 0em;
-}
-
-.game-board-medium > div{
-  height: 30px;
-}
-
-.game-board-easy {
-  grid-template-columns: repeat(10, 45px);
-  background: rgb(49, 47, 47);
-  display: grid;
-  row-gap: 0em;
-}
-
-.game-board-easy > div{
-  height: 45px;
-}
-
-.flag__img {
-  display: none;
+.flags-left__img {
+  height: 93.33%;
 }

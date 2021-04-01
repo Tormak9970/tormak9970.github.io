@@ -1,13 +1,10 @@
 let squares = [];
 let isGameOver = false;
 let flags = 0;
-let flagWidth = 0;
 let bombAmount = 0;
 let fontSize = "";
+let header = document.getElementById("ms-header");
 
-function getFlagWidth(){
-  return flagWidth;
-}
 
 function getBombAmount(){
   return bombAmount;
@@ -40,8 +37,7 @@ async function createBoard(){
     numBombs = 10;
     pixelWidth = 450;
     pixelHeight = 360;
-    flagWidth = 44;
-    fontSize = "30px";
+    fontSize = "min(6.667vw, 30px)";
   }else if(value === "medium"){
     difficultyString = "medium";
     headerWidth = 540;
@@ -50,8 +46,7 @@ async function createBoard(){
     numBombs = 40;
     pixelWidth = 540;
     pixelHeight = 420;
-    flagWidth = 29;
-    fontSize = "15px";
+    fontSize = "min(3.333vw, 15px)";
   }else if(value === "hard"){
     difficultyString = "difficult";
     headerWidth = 600;
@@ -60,13 +55,12 @@ async function createBoard(){
     numBombs = 99;
     pixelWidth = 600;
     pixelHeight = 500;
-    flagWidth = 23;
-    fontSize = "14px";
+    fontSize = "min(3.111vw, 14px)";
   }
 
   bombAmount = numBombs;
   flags = numBombs;
-  returnedVal = await placeMines(numBombs, width*height);
+  var returnedVal = await placeMines(numBombs, width*height);
   mineArray = returnedVal[0];
   emptyArray = returnedVal[1];
   gameArray = returnedVal[2];
@@ -110,10 +104,12 @@ async function createBoard(){
   }
   assignNumbers(width, height);
   gameBoard.className = "game-board-" + difficultyString;
-  document.getElementById("ms-header").style = "width: "+ headerWidth + "px; height: 60px;";
+  let vw = 60 / headerWidth * 100;
+  header.style = `max-width: ${headerWidth}px; max-height: min(${vw}vw, 60px);`;
+  header.parentElement.style = `grid-template-rows: min(${vw}vw, 60px) 1fr;`;
   document.getElementById("flagsLeft").innerHTML = flags;
-  document.getElementById("looseModal").style = "width: " + pixelWidth + "px; height: " + (parseInt(pixelHeight) + 60) + "px;";
-  document.getElementById("winModal").style = "width: " + pixelWidth + "px; height: " + (parseInt(pixelHeight) + 60) + "px;";
+  document.getElementById("looseModal").style = `width: ${pixelWidth / headerWidth * 100}vw; height: ${(parseInt(pixelHeight) + 60) / headerWidth * 100}vw;`;
+  document.getElementById("winModal").style = `width: ${pixelWidth / headerWidth * 100}vw; height: ${(parseInt(pixelHeight) + 60) / headerWidth * 100}vw;`;
   
 }
 
@@ -128,8 +124,6 @@ function onSquareRightClick(squareId){
       flagImg.src = "src/img/flag.png";
       flagImg.alt = "flagged";
       flagImg.className = "flag__img";
-      flagImg.width = getFlagWidth();
-      flagImg.height = getFlagWidth() - 15;
       square.appendChild(flagImg);
       flags--;
       document.getElementById("flagsLeft").innerHTML = flags;
@@ -191,8 +185,6 @@ function gameOver(){
       mineImg.src = "src/img/mine.png";
       mineImg.alt = "mine";
       mineImg.className = "mine__img";
-      mineImg.width = getFlagWidth();
-      mineImg.height = getFlagWidth() - 15;
 
       elem.appendChild(mineImg);
     }
@@ -359,7 +351,7 @@ function getNumColor(num){
 }
 
 createBoard();
-document.getElementById("difficulty-dropdown-menu").onclick = () => {
+document.getElementById("difficulty-dropdown-menu").onclick = async () => {
   console.log("ran func");
-  createBoard();
+  await createBoard();
 };

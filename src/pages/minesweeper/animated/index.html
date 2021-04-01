@@ -15,7 +15,7 @@
   <div class="page-centerer">
     <div class="game-container">
       <div id="ms-header" class="header">
-        <div id="difficulty-dropdown-menu" class="difficulty-dropdown-menu" style="width: 100px; height: 50px;">
+        <div id="difficulty-dropdown-menu" class="difficulty-dropdown-menu" style="width: min(22.222vw, 100px); height: min(8vw, 36px);">
           <select id="difficultySelector">
             <option value="default">Easy</option>
             <option value="easy">Easy</option>
@@ -24,12 +24,12 @@
           </select>
         </div>
         <div class="flags-left">
-          <img src="src/img/flag.png" alt="flags" width="auto" height="28px">
-          <h2 id="flagsLeft" style="color: white;">0</h2>
+          <img src="src/img/flag.png" alt="flags" class="flags-left__img">
+          <h2 id="flagsLeft" style="color: white; font-size: min(4.314159292035399vw, 19.5px);">0</h2>
         </div>
       </div>
       <div id="canvas-container" class="canvas-container">
-        <canvas id="gameBoard" style="position: absolute;"></canvas>
+        <canvas id="gameBoard" style="position: absolute; width: min(100vw, 450px); height: min(80vw, 360px);"></canvas>
       </div>
     </div>
 

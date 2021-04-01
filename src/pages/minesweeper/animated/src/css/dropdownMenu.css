@@ -1,53 +1,47 @@
 .difficulty-dropdown-menu {
-  margin-top: 12.5px;
-  margin-left: 12.5px;
+  margin-left: 2.8%;
   position: relative;
   font-weight: bold;
 }
-
 .difficulty-dropdown-menu select {
   display: none;
 }
-
 .select-selected {
   border-radius: 5px;
   background-color: white;
 }
-
 .select-selected:after {
   position: absolute;
   content: "";
-  top: 14px;
-  right: 10px;
+  top: 38.88%;
+  right: 10%;
   width: 0;
   height: 0;
-  border: 6px solid transparent;
+  border: min(1.333vw, 6px) solid transparent;
   border-color: black transparent transparent transparent;
 }
-
-
+.select-items > div {
+  font-size: min(3.556vw, 16px);
+}
 .select-selected.select-arrow-active:after {
   border-color: transparent transparent black transparent;
   top: 7px;
 }
-
-
 .select-items div,.select-selected {
   color: black;
-  padding: 8px 16px;
+  font-size: min(3.556vw, 16px);
+  padding: 8% 16%;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
 }
-
-
 .select-items {
   z-index: 1;
   position: absolute;
+  width: 100%;
   background-color: white;
-  
 }
-
 .select-hide {
   display: none;
 }
+

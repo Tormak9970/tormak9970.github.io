@@ -22,6 +22,7 @@ let baseDimensions = [];
 let baseStartCoordinates = [];
 let flagDimensions = [];
 let circleDimensions = 0;
+let header = document.getElementById("ms-header");
 
 async function createBoard(){
   var shuffledGameArray;
@@ -39,7 +40,7 @@ async function createBoard(){
     width = 10;
     height = 8;
     numBombs = 10;
-    fontSize = "40px";
+    fontSize = "min(6.667vw, 30px)";
     canvas.width = "450";
     canvas.height = "360";
 
@@ -56,7 +57,7 @@ async function createBoard(){
     width = 18;
     height = 14;
     numBombs = 40;
-    fontSize = "25px";
+    fontSize = "min(3.333vw, 15px)";
     canvas.width = "540";
     canvas.height = "420";
 
@@ -73,7 +74,7 @@ async function createBoard(){
     height = 20;
     width = 24;
     numBombs = 99;
-    fontSize = "19px";
+    fontSize = "min(3.111vw, 14px)";
     canvas.width = "600";
     canvas.height = "500";
 
@@ -121,7 +122,10 @@ async function createBoard(){
   }
   assignNumbers();
   canvas.className = "game-board-" + difficultyString;
-  document.getElementById("ms-header").style = "width: "+ canvas.width + "px; height: 60px;";
+  let headerWidth = canvas.width;
+  let vw = 60 / headerWidth * 100;
+  header.style = `max-width: ${headerWidth}px; max-height: min(${vw}vw, 60px);`;
+  header.parentElement.style = `grid-template-rows: min(${vw}vw, 60px) 1fr;`;
   document.getElementById("flagsLeft").innerHTML = flags;
   document.getElementById("looseModal").style = "width: " + canvas.width + "px; height: " + (parseInt(canvas.height) + 60) + "px;";
   document.getElementById("winModal").style = "width: " + canvas.width + "px; height: " + (parseInt(canvas.height) + 60) + "px;";
@@ -663,7 +667,7 @@ canvas.addEventListener('contextmenu', function(e) {
 });
 
 createBoard();
-document.getElementById("difficulty-dropdown-menu").onclick = () => {
+document.getElementById("difficulty-dropdown-menu").onclick = async () => {
   console.log("ran func");
-  createBoard();
+  await createBoard();
 };

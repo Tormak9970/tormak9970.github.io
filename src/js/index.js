@@ -147,11 +147,11 @@ torcProjLink.addEventListener("click", (e) => {
 });
 msVersionCheckbox.addEventListener("change", () => {
     if (msVersionCheckbox.checked) {
-        msNormal.style.display = "none";
-        msAnimated.style.display = "";
+        msNormal.parentElement.style.display = "none";
+        msAnimated.parentElement.style.display = "";
     } else {
-        msAnimated.style.display = "none";
-        msNormal.style.display = "";
+        msAnimated.parentElement.style.display = "none";
+        msNormal.parentElement.style.display = "";
     }
 });
 toBack.addEventListener("click", () => {
@@ -313,6 +313,39 @@ function resetElems() {
     });
 }
 
+let msNormFunc;
+setTimeout(() => {
+    msNormFunc = msNormal.contentWindow.document.getElementById("difficulty-dropdown-menu").onclick;
+    msNormal.contentWindow.document.getElementById("difficulty-dropdown-menu").onclick = async () => {
+        await msNormFunc();
+        resizeIFrameToFitContent(msNormal);
+    }
+}, 1000);
+let msAnimFunc;
+setTimeout(() => {
+    msAnimFunc = msAnimated.contentWindow.document.getElementById("difficulty-dropdown-menu").onclick;
+    msAnimated.contentWindow.document.getElementById("difficulty-dropdown-menu").onclick = async () => {
+        await msAnimFunc();
+        resizeIFrameToFitContent(msAnimated);
+    }
+}, 1000);
+function resizeIFrameToFitContent( iFrame ) {
+    let inWidth = iFrame.contentWindow.document.body.scrollWidth;
+    let inHeight = iFrame.contentWindow.document.body.scrollHeight;
+    iFrame.width  = inWidth;
+    iFrame.height = inHeight;
+    iFrame.parentElement.style.paddingTop = `${inHeight/inWidth * 100}%`;
+}
+
+function iframeResizeDownFunc(iFrame) {
+    let inWidth = iFrame.contentWindow.document.body.scrollWidth;
+    let inHeight = iFrame.contentWindow.document.body.scrollHeight;
+    let parWidth = iFrame.parentElement.clientWidth;
+    let parHeight = iFrame.parentElement.clientHeight;
+
+    iFrame.style.transform = `scale(${parWidth / inWidth})`;
+}
+
 let openArrow = '<i class="fas fa-angle-double-right"></i>';
 let closedArrow = '<i class="fas fa-angle-double-left"></i>';
 let mode = "width";
@@ -323,4 +356,8 @@ if (mq.matches) {
     closedArrow = '<i class="fas fa-angle-double-up"></i>';
     oAC.innerHTML = closedArrow;
     oAp.innerHTML = closedArrow;
+}
+window.onresize = () => {
+    resizeIFrameToFitContent(msNormal);
+    resizeIFrameToFitContent(msAnimated);
 }
